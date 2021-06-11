@@ -14,3 +14,9 @@ Example of losing the Even game - https://asciinema.org/a/NZfRVf13IwNQ4OSYNxf72r
 Example of winning the Calc game - https://asciinema.org/a/iH148LSR4loF2mtK8x0h8NmEB
 
 Example of losing the Calc game - https://asciinema.org/a/nYuuiOslUhmNjUTriOnOs5d3q
+
+[GDC GAME]
+
+Example of winning the GDC game - https://asciinema.org/a/unhnkuzx8oePjri6Llr8YU24q
+
+Example of losing the GDC game - https://asciinema.org/a/Y8m4voEOMb77NAPTWGAtOGhHl
