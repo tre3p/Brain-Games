@@ -23,8 +23,9 @@ public class Prime {
         }
 
         Scanner sc = new Scanner(System.in);
-        final int rangeOfTheIntegers = 100;
-        Integer integer = (int) (Math.random() * rangeOfTheIntegers);
+        final int max = 100;
+        final int min = 1;
+        Integer integer = (int) ((Math.random() * ((max - min) + 1)) + min);
         BigInteger bigInteger = BigInteger.valueOf(integer);
         boolean probablePrime = bigInteger.isProbablePrime((int) Math.log(integer));
 
