@@ -49,7 +49,7 @@ public class Even {
 
     public static void answerIncorrect() {
         System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", userResult, correctResult);
-        System.out.println("Let's try again, " + Cli.getName());
+        System.out.println("Let's try again, " + Cli.getName() + "!");
     }
 
     public static void answerCorrect() {
