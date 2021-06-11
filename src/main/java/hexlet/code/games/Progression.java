@@ -89,6 +89,7 @@ public class Progression {
         int dotsIndex = (int) (Math.random() * findIndexToDots);
         correctResult = progression[dotsIndex];
         progression[dotsIndex] = "..";
-        System.out.println(Arrays.toString(progression));
+        //System.out.println(Arrays.toString(progression));
+        System.out.println(Arrays.toString(progression).substring(1, Arrays.toString(progression).length() - 1));
     }
 }
