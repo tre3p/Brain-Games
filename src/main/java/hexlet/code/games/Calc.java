@@ -48,7 +48,7 @@ public class Calc {
         final int randomRange = 100;
         int firstRandomDigit = (int) (Math.random() * randomRange);
         int secondRandomDigit = (int) (Math.random() * randomRange);
-        System.out.println("Question:" + firstRandomDigit + "*" + secondRandomDigit);
+        System.out.println("Question: " + firstRandomDigit + " * " + secondRandomDigit);
         System.out.println("Your answer:");
         userResult = isEven.nextInt();
         correctResult = firstRandomDigit * secondRandomDigit;
@@ -68,7 +68,7 @@ public class Calc {
         int firstRandomDigit = (int) (Math.random() * randomRange);
         int secondRandomDigit = (int) (Math.random() * randomRange);
 
-        System.out.println("Question:" + firstRandomDigit + "-" + secondRandomDigit);
+        System.out.println("Question: " + firstRandomDigit + " - " + secondRandomDigit);
         System.out.println("Your answer:");
         userResult = isEven.nextInt();
         correctResult = firstRandomDigit - secondRandomDigit;
@@ -83,6 +83,6 @@ public class Calc {
 
     public static void incorrectAnswer() {
         System.out.printf("'%d' is wrong answer ;(. Correct answer was '%d'.\n", userResult, correctResult);
-        System.out.println("Let's try again, " + Cli.getName());
+        System.out.println("Let's try again, " + Cli.getName() + "!");
     }
 }
