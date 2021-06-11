@@ -53,6 +53,6 @@ public class Prime {
 
     public static void incorrectAnswer() {
         System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", result, correctResult);
-        System.out.printf("Let's try again, %s", Cli.getName());
+        System.out.printf("Let's try again, %s!", Cli.getName());
     }
 }
