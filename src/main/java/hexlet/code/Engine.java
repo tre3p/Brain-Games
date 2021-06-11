@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -11,6 +12,7 @@ public class Engine {
         final int firstGame = 2;
         final int secondGame = 3;
         final int thirdGame = 4;
+        final int fourthGame = 5;
 
         Scanner chooseGame = new Scanner(System.in);
         chooseGame();
@@ -19,18 +21,14 @@ public class Engine {
         if (result == 1) {
             System.out.println("Welcome to the Brain Games!");
             Cli.greeting();
-        }
-
-        if (result == firstGame) {
+        } else if (result == firstGame) {
             Even.greetingsEvenGame();
-        }
-
-        if (result == secondGame) {
+        } else if (result == secondGame) {
             Calc.greetingCalc();
-        }
-
-        if (result == thirdGame) {
+        } else if (result == thirdGame) {
             Gcd.greetingGcd();
+        } else if (result == fourthGame) {
+            Progression.greetingProgression();
         }
     }
 
@@ -39,6 +37,7 @@ public class Engine {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
         System.out.println("Please enter the game number and press Enter.");
     }
