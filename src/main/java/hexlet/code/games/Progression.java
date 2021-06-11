@@ -70,7 +70,7 @@ public class Progression {
 
     public static void progressionGameFailed() {
         System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", userResult, correctResult);
-        System.out.printf("Let's try again, %s", Cli.getName());
+        System.out.printf("Let's try again, %s", Cli.getName() + "!");
     }
 
     public static void printProgression(int a, int d, int n) {

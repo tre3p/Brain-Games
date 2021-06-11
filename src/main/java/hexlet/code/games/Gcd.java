@@ -46,7 +46,7 @@ public class Gcd {
 
     public static void incorrectAnswer() {
         System.out.printf("'%d' is wrong answer ;(. Correct answer was '%d'\n", userResult, correctResult);
-        System.out.printf("Let's try again, %s!", Cli.getName());
+        System.out.printf("Let's try again, %s!", Cli.getName() + "!");
     }
 
     public static int findGcd(int a, int b) {
