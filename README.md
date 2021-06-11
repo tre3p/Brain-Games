@@ -26,3 +26,9 @@ Example of losing the GDC game - https://asciinema.org/a/Y8m4voEOMb77NAPTWGAtOGh
 Example of winning the Progression game -  https://asciinema.org/a/quVE8OxrFgNzMlZXiMgWmNmkj
 
 Example of losing the Progression game - https://asciinema.org/a/w3xwgPt1lPtUxQllTOgnG2LVh
+
+[PRIME GAME]
+
+Example of winning the Prime game - https://asciinema.org/a/OSZe05el3rdvCJHSyB0T9JaDq
+
+Example of losing the Prime game -  https://asciinema.org/a/UzpPfoX0eyy6iYhcrOqQsbRi6
