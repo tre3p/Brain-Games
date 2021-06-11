@@ -1,8 +1,13 @@
 package hexlet.code;
+
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+        final int firstGame = 2;
+        final int secondGame = 3;
         System.out.println("Welcome to the Brain Games!");
         Cli.greeting();
         Scanner chooseGame = new Scanner(System.in);
@@ -14,14 +19,19 @@ public class App {
             Cli.greeting();
         }
 
-        if (result == 2) {
+        if (result == firstGame) {
             Even.greetingsEvenGame();
+        }
+
+        if (result == secondGame) {
+            Calc.greetingCalc();
         }
   }
 
     public static void chooseGame() {
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
+        System.out.println("3 - Calc");
         System.out.println("0 - Exit");
         System.out.println("Please enter the game number and press Enter.");
     }
