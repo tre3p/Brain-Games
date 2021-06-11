@@ -20,3 +20,9 @@ Example of losing the Calc game - https://asciinema.org/a/nYuuiOslUhmNjUTriOnOs5
 Example of winning the GDC game - https://asciinema.org/a/unhnkuzx8oePjri6Llr8YU24q
 
 Example of losing the GDC game - https://asciinema.org/a/Y8m4voEOMb77NAPTWGAtOGhHl
+
+[PROGRESSION GAME]
+
+Example of winning the Progression game -  https://asciinema.org/a/quVE8OxrFgNzMlZXiMgWmNmkj
+
+Example of losing the Progression game - https://asciinema.org/a/w3xwgPt1lPtUxQllTOgnG2LVh
