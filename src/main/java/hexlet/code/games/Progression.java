@@ -43,6 +43,8 @@ public class Progression {
         if (userResult.equals(correctResult)) {
             System.out.println("Correct!");
             thirdProgressionGame();
+        } else {
+            progressionGameFailed();
         }
     }
 
@@ -58,6 +60,8 @@ public class Progression {
         if (userResult.equals(correctResult)) {
             System.out.println("Correct!");
             progressionGameDone();
+        } else {
+            progressionGameFailed();
         }
     }
 
