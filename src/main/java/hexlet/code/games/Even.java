@@ -26,7 +26,7 @@ public class Even {
             System.exit(0);
         }
 
-        System.out.println("Question:" + randomDigit);
+        System.out.println("Question: " + randomDigit);
         System.out.println("Your answer:");
         userResult = isEven.nextLine();
 
