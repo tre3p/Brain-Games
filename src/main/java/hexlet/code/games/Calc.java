@@ -47,7 +47,6 @@ public class Calc {
         final int randomRange = 100;
         int firstRandomDigit = (int) (Math.random() * randomRange);
         int secondRandomDigit = (int) (Math.random() * randomRange);
-        
         System.out.println("Question:" + firstRandomDigit + "*" + secondRandomDigit);
         System.out.println("Your answer:");
         userResult = isEven.nextInt();
