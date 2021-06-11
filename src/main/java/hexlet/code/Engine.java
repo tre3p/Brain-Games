@@ -15,6 +15,7 @@ public class Engine {
         final int fourthGame = 5;
         final int sixthGame = 6;
 
+        System.out.println("Please enter the game number and press Enter.");
         Scanner chooseGame = new Scanner(System.in);
         chooseGame();
         int result = chooseGame.nextInt();

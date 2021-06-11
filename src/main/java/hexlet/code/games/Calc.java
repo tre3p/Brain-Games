@@ -9,6 +9,7 @@ public class Calc {
     private static int correctResult;
 
     public static void greetingCalc() {
+        Cli.greeting();
         final int winsCount = 3;
 
         if (winningsCounter == winsCount) {

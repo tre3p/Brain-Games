@@ -9,6 +9,7 @@ public class Progression {
     private static String userResult;
     private static String correctResult;
     public static void greetingProgression() {
+        Cli.greeting();
         System.out.println("What number is missing in the progression?");
         firstProgressionGame();
     }

@@ -9,6 +9,7 @@ public class Gcd {
     private static int correctResult;
 
     public static void greetingGcd() {
+        Cli.greeting();
         System.out.println("Find the greatest common divisor of given numbers.");
         gcdGame();
     }

@@ -10,6 +10,7 @@ public class Even {
     private static String correctResult;
 
     public static void greetingsEvenGame() {
+        Cli.greeting();
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
         evenGame();
     }
