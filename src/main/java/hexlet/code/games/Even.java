@@ -22,7 +22,7 @@ public class Even {
         final int winsCount = 3;
 
         if (winningsCounter == winsCount) {
-            System.out.println("Congratulations, " + Cli.getName());
+            System.out.println("Congratulations, " + Cli.getName() + "!");
             System.exit(0);
         }
 
