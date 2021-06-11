@@ -65,7 +65,7 @@ public class Progression {
     }
 
     public static void progressionGameDone() {
-        System.out.printf("Congratulations, %s", Cli.getName());
+        System.out.printf("Congratulations, %s", Cli.getName() + "!");
     }
 
     public static void progressionGameFailed() {
