@@ -1,8 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Progression {
@@ -76,6 +74,7 @@ public class Progression {
     }
 
     public static void printProgression(int a, int d, int n) {
+        StringBuilder sb = new StringBuilder();
         int temp = a;
         String result = "";
         String[] progression = new String[n];
@@ -89,8 +88,13 @@ public class Progression {
         int dotsIndex = (int) (Math.random() * findIndexToDots);
         correctResult = progression[dotsIndex];
         progression[dotsIndex] = "..";
+
+        for (String value : progression) {
+            sb.append(value + " ");
+        }
+
         //System.out.println(Arrays.toString(progression));
         System.out.print("Question: ");
-        System.out.println(Arrays.toString(progression).substring(1, Arrays.toString(progression).length() - 1));
+        System.out.println(sb);
     }
 }
