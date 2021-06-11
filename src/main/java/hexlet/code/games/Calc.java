@@ -28,7 +28,7 @@ public class Calc {
         int secondRandomDigit = (int) (Math.random() * randomRange);
 
         System.out.println("What is the result of the expression?");
-        System.out.println("Question:" + firstRandomDigit + "+" + secondRandomDigit);
+        System.out.println("Question: " + firstRandomDigit + " + " + secondRandomDigit);
         System.out.println("Your answer:");
         userResult = isEven.nextInt();
         correctResult = firstRandomDigit + secondRandomDigit;
