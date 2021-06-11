@@ -35,7 +35,7 @@ public class Prime {
             correctResult = "no";
         }
         System.out.printf("Question: %d\n", integer);
-        System.out.println("Your answer:");
+        System.out.print("Your answer:");
         result = sc.nextLine();
 
         if (result.equals(correctResult)) {
