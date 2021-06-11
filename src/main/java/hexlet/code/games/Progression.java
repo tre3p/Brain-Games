@@ -90,6 +90,7 @@ public class Progression {
         correctResult = progression[dotsIndex];
         progression[dotsIndex] = "..";
         //System.out.println(Arrays.toString(progression));
+        System.out.print("Question: \n");
         System.out.println(Arrays.toString(progression).substring(1, Arrays.toString(progression).length() - 1));
     }
 }
