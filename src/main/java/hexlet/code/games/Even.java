@@ -29,25 +29,25 @@ public class Even {
         System.out.println("Your answer:");
         userResult = isEven.nextLine();
 
-        if (!userResult.equals("yes") && randomDigit % 2 == 0) {
+        if (!userResult.equals("yes") && randomDigit % 2 != 0) {
             winningsCounter++;
-            correctResult = "yes";
-            answerCorrect();
-        } else if (!userResult.equals("yes") && randomDigit % 2 != 0) {
             correctResult = "no";
-            answerIncorrect();
-        } else if (!userResult.equals("no") && randomDigit % 2 == 0) {
+            answerCorrect();
+        } else if (!userResult.equals("yes") && randomDigit % 2 == 0) {
             correctResult = "yes";
             answerIncorrect();
         } else if (!userResult.equals("no") && randomDigit % 2 != 0) {
-            winningsCounter++;
             correctResult = "no";
+            answerIncorrect();
+        } else if (!userResult.equals("no") && randomDigit % 2 == 0) {
+            winningsCounter++;
+            correctResult = "yes";
             answerCorrect();
         }
     }
 
     public static void answerIncorrect() {
-        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.", userResult, correctResult);
+        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", userResult, correctResult);
         System.out.println("Let's try again, " + Cli.getName());
     }
 
