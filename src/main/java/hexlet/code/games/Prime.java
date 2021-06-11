@@ -18,7 +18,7 @@ public class Prime {
         final int winsToFinish = 3;
 
         if (winsCounter == winsToFinish) {
-            System.out.printf("Congratulations, %s", Cli.getName());
+            System.out.printf("Congratulations, %s", Cli.getName() + "!");
             System.exit(0);
         }
 
