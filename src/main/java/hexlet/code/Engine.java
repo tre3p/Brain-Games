@@ -1,10 +1,10 @@
 package hexlet.code;
 
+import hexlet.code.games.Progression;
+import hexlet.code.games.Gcd;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
-import hexlet.code.games.Gcd;
-import hexlet.code.games.Progression;
-
+import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class Engine {
@@ -13,6 +13,7 @@ public class Engine {
         final int secondGame = 3;
         final int thirdGame = 4;
         final int fourthGame = 5;
+        final int sixthGame = 6;
 
         Scanner chooseGame = new Scanner(System.in);
         chooseGame();
@@ -29,6 +30,8 @@ public class Engine {
             Gcd.greetingGcd();
         } else if (result == fourthGame) {
             Progression.greetingProgression();
+        } else if (result == sixthGame) {
+            Prime.greetingsPrime();
         }
     }
 
@@ -38,6 +41,7 @@ public class Engine {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.println("Please enter the game number and press Enter.");
     }
