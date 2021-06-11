@@ -10,14 +10,14 @@ public class Calc {
 
     public static void greetingCalc() {
         Cli.greeting();
+        plusCalcGame();
+    }
+    public static void checkIfWin() {
         final int winsCount = 3;
-
         if (winningsCounter == winsCount) {
             System.out.println("Congratulations, " + Cli.getName() + "!");
             System.exit(0);
         }
-
-        plusCalcGame();
     }
 
 
@@ -75,7 +75,7 @@ public class Calc {
         if (userResult == correctResult) {
             System.out.println("Correct!");
             winningsCounter++;
-            greetingCalc();
+            checkIfWin();
         } else {
             incorrectAnswer();
         }
