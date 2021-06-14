@@ -11,7 +11,7 @@ public class Calc {
     public static void greetingCalc() {
         Cli.greeting();
         System.out.println("What is the result of the expression?");
-        plusCalcGame();
+        calcGame();
     }
 
     public static void checkIfWin() {
@@ -22,54 +22,47 @@ public class Calc {
     }
 
 
-    public static void plusCalcGame() {
+    public static void calcGame() {
         Scanner isEven = new Scanner(System.in);
         int[] digitsResult = Engine.generateDigits();
-        System.out.println("Question: " + digitsResult[0] + " + " + digitsResult[1]);
-        System.out.println("Your answer:");
-        int userResult = isEven.nextInt();
-        int correctResult = digitsResult[0] + digitsResult[1];
-
-        if (userResult == correctResult) {
-            Engine.correctAnswer();
-            winningsCounter++;
-            multiplGame();
-        } else {
-            Engine.incorrectAnswerForDigits(userResult, correctResult);
-        }
-
-    }
-
-    public static void multiplGame() {
-        Scanner isEven = new Scanner(System.in);
-        int[] digitsResult = Engine.generateDigits();
-        System.out.println("Question: " + digitsResult[0] + " * " + digitsResult[1]);
-        System.out.println("Your answer:");
-        int userResult = isEven.nextInt();
-        int correctResult = digitsResult[0] * digitsResult[1];
-
-        if (userResult == correctResult) {
-            Engine.correctAnswer();
-            winningsCounter++;
-            minusGame();
-        } else {
-            Engine.incorrectAnswerForDigits(userResult, correctResult);
-        }
-    }
-
-    public static void minusGame() {
-        Scanner isEven = new Scanner(System.in);
-        int[] digitsResult = Engine.generateDigits();
-        System.out.println("Question: " + digitsResult[0] + " - " + digitsResult[1]);
-        System.out.println("Your answer:");
-        int userResult = isEven.nextInt();
-        int correctResult = digitsResult[0] - digitsResult[1];
-        if (userResult == correctResult) {
-            Engine.correctAnswer();
-            winningsCounter++;
-            checkIfWin();
-        } else {
-            Engine.incorrectAnswerForDigits(userResult, correctResult);
+        if (winningsCounter == 0) {
+            System.out.println("Question: " + digitsResult[0] + " + " + digitsResult[1]);
+            System.out.println("Your answer:");
+            int userResult = isEven.nextInt();
+            int correctResult = digitsResult[0] + digitsResult[1];
+            if (userResult == correctResult) {
+                Engine.correctAnswer();
+                winningsCounter++;
+                calcGame();
+            } else {
+                Engine.incorrectAnswerForDigits(userResult, correctResult);
+            }
+        } else if (winningsCounter == 1) {
+            System.out.println("Question: " + digitsResult[0] + " * " + digitsResult[1]);
+            System.out.println("Your answer:");
+            int userResult = isEven.nextInt();
+            int correctResult = digitsResult[0] * digitsResult[1];
+                if (userResult == correctResult) {
+                    Engine.correctAnswer();
+                    winningsCounter++;
+                    calcGame();
+                } else {
+                    Engine.incorrectAnswerForDigits(userResult, correctResult);
+            }
+        } else if (winningsCounter == 2) {
+            System.out.println("Question: " + digitsResult[0] + " - " + digitsResult[1]);
+            System.out.println("Your answer:");
+            int userResult = isEven.nextInt();
+            int correctResult = digitsResult[0] - digitsResult[1];
+                if (userResult == correctResult) {
+                    Engine.correctAnswer();
+                    winningsCounter++;
+                    calcGame();
+                } else {
+                    Engine.incorrectAnswerForDigits(userResult, correctResult);
+            }
+        } else if (winningsCounter == WINS_COUNT) {
+            Engine.gameDone();
         }
     }
 }
