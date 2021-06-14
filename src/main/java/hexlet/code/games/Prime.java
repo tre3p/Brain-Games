@@ -9,8 +9,6 @@ public class Prime {
     private static String userResult;
     private static String correctResult;
     private static final int WINS_COUNT = 3;
-    private static final int MAX = 100;
-    private static final int MIN = 1;
     private static boolean probablePrime = true;
 
     public static void greetingsPrime() {
@@ -27,7 +25,7 @@ public class Prime {
         Scanner sc = new Scanner(System.in);
         int[] randomDigit = Engine.generateDigits();
         int num = randomDigit[0];
-        for (int i = 2; i != num / 2; i++) {
+        for (int i = 2; i != num; i++) {
             if (num % i == 0) {
                 probablePrime = false;
                 break;
