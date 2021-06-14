@@ -72,6 +72,6 @@ public class Engine {
     }
 
     public static void gameDone() {
-        System.out.printf("Congratulations, %s", Cli.getName());
+        System.out.printf("Congratulations, %s!", Cli.getName());
     }
 }
