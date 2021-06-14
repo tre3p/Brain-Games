@@ -14,14 +14,6 @@ public class Calc {
         calcGame();
     }
 
-    public static void checkIfWin() {
-        if (winningsCounter == WINS_COUNT) {
-            Engine.gameDone();
-            System.exit(0);
-        }
-    }
-
-
     public static void calcGame() {
         Scanner isEven = new Scanner(System.in);
         int[] digitsResult = Engine.generateDigits();
