@@ -33,9 +33,9 @@ public class Prime {
             }
         }
         if (probablePrime) {
-            correctResult = "yes";
-        } else {
             correctResult = "no";
+        } else {
+            correctResult = "yes";
         }
         System.out.printf("Question: %d\n", randomDigit[0]);
         System.out.print("Your answer:");
