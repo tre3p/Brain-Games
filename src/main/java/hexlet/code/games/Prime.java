@@ -24,9 +24,8 @@ public class Prime {
         }
         Scanner sc = new Scanner(System.in);
         int[] randomDigit = Engine.generateDigits();
-        int num = 17;
-        for (int i = 2; i < num; i++) {
-            if (num % i == 0) {
+        for (int i = 2; i < randomDigit[0]; i++) {
+            if (randomDigit[0] % i == 0) {
                 isPrime = false;
                 break;
             }
