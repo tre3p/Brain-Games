@@ -26,9 +26,8 @@ public class Prime {
         }
         Scanner sc = new Scanner(System.in);
         int[] randomDigit = Engine.generateDigits();
-        for (int i = 2; i <= randomDigit[0]; i++) {
-            int temp = randomDigit[0] % i;
-            if (temp == 0) {
+        for (int i = 2; i <= randomDigit[0] / 2; i++) {
+            if (randomDigit[0] % i == 0) {
                 probablePrime = false;
                 break;
             }
@@ -46,7 +45,7 @@ public class Prime {
             winsCounter++;
             Engine.correctAnswer();
             primeGame();
-        } else if (!userResult.equals(correctResult)) {
+        } else {
             Engine.incorrectAnswerForStrings(userResult, correctResult);
         }
     }
