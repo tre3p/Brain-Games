@@ -1,76 +1,42 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
+import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Progression {
+    private static int winningsCounter = 0;
     private static String userResult;
     private static String correctResult;
+    private static final int WINS_COUNT = 3;
+    private static final int LENGTH_OF_PROGRESSION = 10;
+    private static final int COMPLEXITY = 30;
     public static void greetingProgression() {
         Cli.greeting();
         System.out.println("What number is missing in the progression?");
-        firstProgressionGame();
+        progressionGame();
     }
 
-    public static void firstProgressionGame() {
+    public static void progressionGame() {
+        if (winningsCounter == WINS_COUNT) {
+            Engine.gameDone();
+            System.exit(0);
+        }
+
         Scanner sc = new Scanner(System.in);
-        final int complexityOfProgression = 20;
-        final int differenceOfProgression = 3;
-        final int lengthOfProgression = 10;
-        printProgression((int) (Math.random() * complexityOfProgression), differenceOfProgression, lengthOfProgression);
+        int complexityOfProgression = (int) (Math.random() * COMPLEXITY);
+        int differenceOfProgression = (int) (Math.random() * complexityOfProgression);
+        printProgression(complexityOfProgression, differenceOfProgression, LENGTH_OF_PROGRESSION);
         System.out.println("Your answer:");
         userResult = sc.nextLine();
 
         if (userResult.equals(correctResult)) {
-            System.out.println("Correct!");
-            secondProgressionGame();
+            Engine.correctAnswer();
+            winningsCounter++;
+            progressionGame();
         } else {
-            progressionGameFailed();
+            Engine.incorrectAnswerForStrings(userResult, correctResult);
         }
-    }
-
-    public static void secondProgressionGame() {
-        Scanner sc = new Scanner(System.in);
-        final int complexityOfProgression = 30;
-        final int differenceOfProgression = 6;
-        final int lengthOfProgression = 10;
-        System.out.println("Question:");
-        printProgression((int) (Math.random() * complexityOfProgression), differenceOfProgression, lengthOfProgression);
-        System.out.println("Your answer:");
-        userResult = sc.nextLine();
-
-        if (userResult.equals(correctResult)) {
-            System.out.println("Correct!");
-            thirdProgressionGame();
-        } else {
-            progressionGameFailed();
-        }
-    }
-
-    public static void thirdProgressionGame() {
-        Scanner sc = new Scanner(System.in);
-        final int complexityOfProgression = 5;
-        final int differenceOfProgression = 7;
-        final int lengthOfProgression = 10;
-        printProgression((int) (Math.random() * complexityOfProgression), differenceOfProgression, lengthOfProgression);
-        System.out.println("Your answer:");
-        userResult = sc.nextLine();
-
-        if (userResult.equals(correctResult)) {
-            System.out.println("Correct!");
-            progressionGameDone();
-        } else {
-            progressionGameFailed();
-        }
-    }
-
-    public static void progressionGameDone() {
-        System.out.printf("Congratulations, %s", Cli.getName() + "!");
-    }
-
-    public static void progressionGameFailed() {
-        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", userResult, correctResult);
-        System.out.printf("Let's try again, %s", Cli.getName() + "!");
     }
 
     public static void printProgression(int a, int d, int n) {
@@ -93,7 +59,6 @@ public class Progression {
             sb.append(value + " ");
         }
 
-        //System.out.println(Arrays.toString(progression));
         System.out.print("Question: ");
         System.out.println(sb);
     }

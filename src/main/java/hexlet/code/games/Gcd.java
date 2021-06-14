@@ -1,12 +1,14 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
+import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Gcd {
     private static int winningsCounter = 0;
     private static int userResult;
     private static int correctResult;
+    private static final int WINS_COUNT = 3;
 
     public static void greetingGcd() {
         Cli.greeting();
@@ -14,39 +16,30 @@ public class Gcd {
         gcdGame();
     }
 
-    public static void gcdGame() {
-        final int winsCount = 3;
-        if (winningsCounter == winsCount) {
-            System.out.println("Congratulations, " + Cli.getName() + "!");
+    public static void checkIfWin() {
+        if (winningsCounter == WINS_COUNT) {
+            Engine.gameDone();
             System.exit(0);
         }
+    }
 
+    public static void gcdGame() {
         Scanner gcdResult = new Scanner(System.in);
-        final int randomRange = 100;
-        int firstRandomDigit = (int) (Math.random() * randomRange);
-        int secondRandomDigit = (int) (Math.random() * randomRange);
-        correctResult = findGcd(firstRandomDigit, secondRandomDigit);
+        int[] digitsResult = Engine.generateDigits();
 
-        System.out.printf("Question: %d %d\n", firstRandomDigit, secondRandomDigit);
+        System.out.printf("Question: %d %d\n", digitsResult[0], digitsResult[1]);
+        correctResult = findGcd(digitsResult[0], digitsResult[1]);
         System.out.println("Your answer:");
         userResult = gcdResult.nextInt();
 
         if (userResult == correctResult) {
-            correctAnswer();
+            winningsCounter++;
+            Engine.correctAnswer();
+            checkIfWin();
+            gcdGame();
         } else {
-            incorrectAnswer();
+            Engine.incorrectAnswerForDigits(userResult, correctResult);
         }
-    }
-
-    public static void correctAnswer() {
-        System.out.println("Correct!");
-        winningsCounter++;
-        gcdGame();
-    }
-
-    public static void incorrectAnswer() {
-        System.out.printf("'%d' is wrong answer ;(. Correct answer was '%d'\n", userResult, correctResult);
-        System.out.printf("Let's try again, %s!", Cli.getName() + "!");
     }
 
     public static int findGcd(int a, int b) {

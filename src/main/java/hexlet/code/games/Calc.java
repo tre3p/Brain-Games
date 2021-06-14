@@ -1,21 +1,22 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
+import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Calc {
     private static int winningsCounter = 0;
-    private static int userResult;
-    private static int correctResult;
+    private static final int WINS_COUNT = 3;
 
     public static void greetingCalc() {
         Cli.greeting();
+        System.out.println("What is the result of the expression?");
         plusCalcGame();
     }
+
     public static void checkIfWin() {
-        final int winsCount = 3;
-        if (winningsCounter == winsCount) {
-            System.out.println("Congratulations, " + Cli.getName() + "!");
+        if (winningsCounter == WINS_COUNT) {
+            Engine.gameDone();
             System.exit(0);
         }
     }
@@ -23,66 +24,52 @@ public class Calc {
 
     public static void plusCalcGame() {
         Scanner isEven = new Scanner(System.in);
-        final int randomRange = 100;
-        int firstRandomDigit = (int) (Math.random() * randomRange);
-        int secondRandomDigit = (int) (Math.random() * randomRange);
-
-        System.out.println("What is the result of the expression?");
-        System.out.println("Question: " + firstRandomDigit + " + " + secondRandomDigit);
+        int[] digitsResult = Engine.generateDigits();
+        System.out.println("Question: " + digitsResult[0] + " + " + digitsResult[1]);
         System.out.println("Your answer:");
-        userResult = isEven.nextInt();
-        correctResult = firstRandomDigit + secondRandomDigit;
+        int userResult = isEven.nextInt();
+        int correctResult = digitsResult[0] + digitsResult[1];
 
         if (userResult == correctResult) {
-            System.out.println("Correct!");
+            Engine.correctAnswer();
             winningsCounter++;
             multiplGame();
         } else {
-            incorrectAnswer();
+            Engine.incorrectAnswerForDigits(userResult, correctResult);
         }
 
     }
 
     public static void multiplGame() {
         Scanner isEven = new Scanner(System.in);
-        final int randomRange = 100;
-        int firstRandomDigit = (int) (Math.random() * randomRange);
-        int secondRandomDigit = (int) (Math.random() * randomRange);
-        System.out.println("Question: " + firstRandomDigit + " * " + secondRandomDigit);
+        int[] digitsResult = Engine.generateDigits();
+        System.out.println("Question: " + digitsResult[0] + " * " + digitsResult[1]);
         System.out.println("Your answer:");
-        userResult = isEven.nextInt();
-        correctResult = firstRandomDigit * secondRandomDigit;
+        int userResult = isEven.nextInt();
+        int correctResult = digitsResult[0] * digitsResult[1];
 
         if (userResult == correctResult) {
-            System.out.println("Correct!");
+            Engine.correctAnswer();
             winningsCounter++;
             minusGame();
         } else {
-            incorrectAnswer();
+            Engine.incorrectAnswerForDigits(userResult, correctResult);
         }
     }
 
     public static void minusGame() {
         Scanner isEven = new Scanner(System.in);
-        final int randomRange = 100;
-        int firstRandomDigit = (int) (Math.random() * randomRange);
-        int secondRandomDigit = (int) (Math.random() * randomRange);
-
-        System.out.println("Question: " + firstRandomDigit + " - " + secondRandomDigit);
+        int[] digitsResult = Engine.generateDigits();
+        System.out.println("Question: " + digitsResult[0] + " - " + digitsResult[1]);
         System.out.println("Your answer:");
-        userResult = isEven.nextInt();
-        correctResult = firstRandomDigit - secondRandomDigit;
+        int userResult = isEven.nextInt();
+        int correctResult = digitsResult[0] - digitsResult[1];
         if (userResult == correctResult) {
-            System.out.println("Correct!");
+            Engine.correctAnswer();
             winningsCounter++;
             checkIfWin();
         } else {
-            incorrectAnswer();
+            Engine.incorrectAnswerForDigits(userResult, correctResult);
         }
-    }
-
-    public static void incorrectAnswer() {
-        System.out.printf("'%d' is wrong answer ;(. Correct answer was '%d'.\n", userResult, correctResult);
-        System.out.println("Let's try again, " + Cli.getName() + "!");
     }
 }
