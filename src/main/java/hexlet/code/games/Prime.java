@@ -9,7 +9,7 @@ public class Prime {
     private static String userResult;
     private static String correctResult;
     private static final int WINS_COUNT = 3;
-    private static boolean probablePrime = true;
+    private static boolean isPrime = true;
 
     public static void greetingsPrime() {
         Cli.greeting();
@@ -24,14 +24,14 @@ public class Prime {
         }
         Scanner sc = new Scanner(System.in);
         int[] randomDigit = Engine.generateDigits();
-        int num = randomDigit[0];
-        for (int i = 2; i != num; i++) {
+        int num = 17;
+        for (int i = 2; i < num; i++) {
             if (num % i == 0) {
-                probablePrime = false;
+                isPrime = false;
                 break;
             }
         }
-        if (probablePrime) {
+        if (isPrime) {
             correctResult = "yes";
         } else {
             correctResult = "no";
