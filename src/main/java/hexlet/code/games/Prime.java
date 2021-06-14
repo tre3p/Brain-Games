@@ -26,7 +26,7 @@ public class Prime {
         }
         Scanner sc = new Scanner(System.in);
         int[] randomDigit = Engine.generateDigits();
-        for (int i = 2; i <= randomDigit[0] / 2; i++) {
+        for (int i = 2; i != randomDigit[0] / 2; i++) {
             if (randomDigit[0] % i == 0) {
                 probablePrime = false;
                 break;
