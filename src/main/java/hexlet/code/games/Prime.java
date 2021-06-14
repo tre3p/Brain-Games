@@ -26,16 +26,17 @@ public class Prime {
         }
         Scanner sc = new Scanner(System.in);
         int[] randomDigit = Engine.generateDigits();
-        for (int i = 2; i != randomDigit[0] / 2; i++) {
-            if (randomDigit[0] % i == 0) {
+        int num = randomDigit[0];
+        for (int i = 2; i != num / 2; i++) {
+            if (num % i == 0) {
                 probablePrime = false;
                 break;
             }
         }
         if (probablePrime) {
-            correctResult = "no";
-        } else {
             correctResult = "yes";
+        } else {
+            correctResult = "no";
         }
         System.out.printf("Question: %d\n", randomDigit[0]);
         System.out.print("Your answer:");
