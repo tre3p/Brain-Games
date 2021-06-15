@@ -16,20 +16,14 @@ public class Prime {
     }
 
     public static void primeGame() {
-        int[] randomDigit = Engine.generateDigits();
-        int num = randomDigit[0];
-        for (int i = 2; i <= num / 2; i++) {
-            if (num % i == 0) {
-                isPrime = false;
-                break;
-            }
-        }
-        if (isPrime) {
+        boolean result = checkIsPrime();
+
+        if (result) {
             correctResult = "yes";
         } else {
             correctResult = "no";
         }
-        System.out.printf("Question: %d\n", num);
+
         userResult = Engine.getAnswerForStrings();
         boolean isAnswerCorrect = Engine.isAnswerCorrect(userResult, correctResult, winningsCounter);
 
@@ -39,5 +33,19 @@ public class Prime {
         } else {
             Engine.incorrectAnswer(userResult, correctResult);
         }
+    }
+
+    public static boolean checkIsPrime() {
+        isPrime = true;
+        int[] randomDigit = Engine.generateDigits();
+        int num = randomDigit[0];
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        System.out.printf("Question: %d\n", num);
+        return isPrime;
     }
 }
