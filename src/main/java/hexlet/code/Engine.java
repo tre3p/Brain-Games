@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Engine {
     private static final int RANDOM_RANGE = 100;
-    private static final int WINS_COUNT = 3;
+    private static final int WINS_COUNT = 2;
     public static void gameChooser() {
         final int firstGame = 2;
         final int secondGame = 3;
@@ -89,13 +89,13 @@ public class Engine {
     public static boolean isAnswerCorrect(int userResult, int correctResult, int winningsCounter) {
         boolean isAnswerCorrect = false;
 
-        if (winningsCounter == WINS_COUNT) {
-            Engine.gameDone();
-        }
-
         if (userResult == correctResult) {
             Engine.correctAnswer();
             isAnswerCorrect = true;
+        }
+
+        if (winningsCounter == WINS_COUNT && isAnswerCorrect) {
+            Engine.gameDone();
         }
         return isAnswerCorrect;
     }
@@ -108,8 +108,7 @@ public class Engine {
             isAnswerCorrect = true;
         }
 
-        if (winningsCounter == WINS_COUNT) {
-            Engine.correctAnswer();
+        if (winningsCounter == WINS_COUNT && isAnswerCorrect) {
             Engine.gameDone();
         }
         return isAnswerCorrect;
