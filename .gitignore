@@ -3,9 +3,3 @@
 
 # Ignore Gradle build output directory
 build
-
-# Ignore DS_STORE to avoid problems
-.DS_STORE
-
-# Ignore .idea to avoid problems
-.idea
