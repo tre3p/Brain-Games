@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class Engine {
     private static final int RANDOM_RANGE = 100;
+    private static final int WINS_COUNT = 2;
     public static void gameChooser() {
         final int firstGame = 2;
         final int secondGame = 3;
@@ -21,19 +22,28 @@ public class Engine {
         chooseGame();
         int result = chooseGame.nextInt();
 
-        if (result == 1) {
-            System.out.println("Welcome to the Brain Games!");
-            Cli.greeting();
-        } else if (result == firstGame) {
-            Even.greetingsEvenGame();
-        } else if (result == secondGame) {
-            Calc.greetingCalc();
-        } else if (result == thirdGame) {
-            Gcd.greetingGcd();
-        } else if (result == fourthGame) {
-            Progression.greetingProgression();
-        } else if (result == sixthGame) {
-            Prime.greetingsPrime();
+        switch (result) {
+            case 1:
+                System.out.println("Welcome to the Brain Games!");
+                Cli.greeting();
+                break;
+            case firstGame:
+                Even.greetingsEvenGame();
+                break;
+            case secondGame:
+                Calc.greetingCalc();
+                break;
+            case thirdGame:
+                Gcd.greetingGcd();
+                break;
+            case fourthGame:
+                Progression.greetingProgression();
+                break;
+            case sixthGame:
+                Prime.greetingsPrime();
+                break;
+            default:
+                break;
         }
     }
 
@@ -61,17 +71,63 @@ public class Engine {
         System.out.println("Correct!");
     }
 
-    public static void incorrectAnswerForDigits(int userResult, int correctResult) {
+    public static void incorrectAnswer(int userResult, int correctResult) {
         System.out.printf("'%d' is wrong answer ;(. Correct answer was '%d'\n", userResult, correctResult);
         System.out.printf("Let's try again, %s!", Cli.getName());
     }
 
-    public static void incorrectAnswerForStrings(String userResult, String correctResult) {
+    public static void incorrectAnswer(String userResult, String correctResult) {
         System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'\n", userResult, correctResult);
         System.out.printf("Let's try again, %s!", Cli.getName());
     }
 
     public static void gameDone() {
         System.out.printf("Congratulations, %s!", Cli.getName());
+        System.exit(0);
+    }
+
+    public static boolean isAnswerCorrect(int userResult, int correctResult, int winningsCounter) {
+        boolean isAnswerCorrect = false;
+
+        if (winningsCounter == WINS_COUNT) {
+            Engine.gameDone();
+        }
+
+        if (userResult == correctResult) {
+            Engine.correctAnswer();
+            isAnswerCorrect = true;
+        }
+        return isAnswerCorrect;
+    }
+
+    public static boolean isAnswerCorrect(String userResult, String correctResult, int winningsCounter) {
+        boolean isAnswerCorrect = false;
+
+        if (winningsCounter == WINS_COUNT) {
+            Engine.correctAnswer();
+            Engine.gameDone();
+        }
+
+        if (userResult.equals(correctResult)) {
+            Engine.correctAnswer();
+            isAnswerCorrect = true;
+        }
+        return isAnswerCorrect;
+    }
+
+    public static int getAnswerForDigits() {
+        int userResult = 0;
+        Scanner result = new Scanner(System.in);
+        System.out.println("Your answer:");
+        userResult = result.nextInt();
+        return userResult;
+    }
+
+    public static String getAnswerForStrings() {
+        String userResult;
+        Scanner result = new Scanner(System.in);
+        System.out.println("Your answer:");
+        userResult = result.nextLine();
+        return userResult;
     }
 }

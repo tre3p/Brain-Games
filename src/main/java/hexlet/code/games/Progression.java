@@ -2,13 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.Cli;
 import hexlet.code.Engine;
-import java.util.Scanner;
 
 public class Progression {
     private static int winningsCounter = 0;
     private static String userResult;
     private static String correctResult;
-    private static final int WINS_COUNT = 3;
     private static final int LENGTH_OF_PROGRESSION = 10;
     private static final int COMPLEXITY = 30;
     public static void greetingProgression() {
@@ -18,24 +16,17 @@ public class Progression {
     }
 
     public static void progressionGame() {
-        if (winningsCounter == WINS_COUNT) {
-            Engine.gameDone();
-            System.exit(0);
-        }
-
-        Scanner sc = new Scanner(System.in);
         int complexityOfProgression = (int) (Math.random() * COMPLEXITY);
         int differenceOfProgression = (int) (Math.random() * complexityOfProgression);
         printProgression(complexityOfProgression, differenceOfProgression, LENGTH_OF_PROGRESSION);
-        System.out.println("Your answer:");
-        userResult = sc.nextLine();
+        userResult = Engine.getAnswerForStrings();
+        boolean isAnswerCorrect = Engine.isAnswerCorrect(userResult, correctResult, winningsCounter);
 
-        if (userResult.equals(correctResult)) {
-            Engine.correctAnswer();
+        if (isAnswerCorrect) {
             winningsCounter++;
             progressionGame();
         } else {
-            Engine.incorrectAnswerForStrings(userResult, correctResult);
+            Engine.incorrectAnswer(userResult, correctResult);
         }
     }
 

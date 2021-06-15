@@ -2,13 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.Cli;
 import hexlet.code.Engine;
-import java.util.Scanner;
 
 public class Prime {
-    private static int winsCounter;
+    private static int winningsCounter;
     private static String userResult;
     private static String correctResult;
-    private static final int WINS_COUNT = 3;
     private static boolean isPrime = true;
 
     public static void greetingsPrime() {
@@ -18,14 +16,9 @@ public class Prime {
     }
 
     public static void primeGame() {
-        if (winsCounter == WINS_COUNT) {
-            Engine.gameDone();
-            System.exit(0);
-        }
-        Scanner sc = new Scanner(System.in);
         int[] randomDigit = Engine.generateDigits();
         int num = randomDigit[0];
-        for (int i = 2; i < num; i++) {
+        for (int i = 2; i <= num / 2; i++) {
             if (num % i == 0) {
                 isPrime = false;
                 break;
@@ -37,15 +30,14 @@ public class Prime {
             correctResult = "no";
         }
         System.out.printf("Question: %d\n", num);
-        System.out.print("Your answer:");
-        userResult = sc.nextLine();
+        userResult = Engine.getAnswerForStrings();
+        boolean isAnswerCorrect = Engine.isAnswerCorrect(userResult, correctResult, winningsCounter);
 
-        if (userResult.equals(correctResult)) {
-            winsCounter++;
-            Engine.correctAnswer();
+        if (isAnswerCorrect) {
+            winningsCounter++;
             primeGame();
         } else {
-            Engine.incorrectAnswerForStrings(userResult, correctResult);
+            Engine.incorrectAnswer(userResult, correctResult);
         }
     }
 }

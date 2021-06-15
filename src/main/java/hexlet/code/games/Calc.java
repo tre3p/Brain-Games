@@ -2,11 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.Cli;
 import hexlet.code.Engine;
-import java.util.Scanner;
 
 public class Calc {
     private static int winningsCounter = 0;
-    private static final int WINS_COUNT = 3;
+    private static int userResult = 0;
+    private static int correctResult = 0;
 
     public static void greetingCalc() {
         Cli.greeting();
@@ -14,55 +14,45 @@ public class Calc {
         calcGame();
     }
 
-    public static void checkIfWin() {
-        if (winningsCounter == WINS_COUNT) {
-            Engine.gameDone();
-            System.exit(0);
-        }
-    }
-
-
     public static void calcGame() {
-        Scanner isEven = new Scanner(System.in);
         int[] digitsResult = Engine.generateDigits();
         if (winningsCounter == 0) {
             System.out.println("Question: " + digitsResult[0] + " + " + digitsResult[1]);
-            System.out.println("Your answer:");
-            int userResult = isEven.nextInt();
-            int correctResult = digitsResult[0] + digitsResult[1];
-            if (userResult == correctResult) {
-                Engine.correctAnswer();
-                winningsCounter++;
-                calcGame();
-            } else {
-                Engine.incorrectAnswerForDigits(userResult, correctResult);
-            }
+            userResult = Engine.getAnswerForDigits();
+            countCorrectAnswer(digitsResult);
+            boolean isCorrect = Engine.isAnswerCorrect(userResult, correctResult, winningsCounter);
+            isAnswerCorrect(isCorrect);
         } else if (winningsCounter == 1) {
             System.out.println("Question: " + digitsResult[0] + " * " + digitsResult[1]);
-            System.out.println("Your answer:");
-            int userResult = isEven.nextInt();
-            int correctResult = digitsResult[0] * digitsResult[1];
-                if (userResult == correctResult) {
-                    Engine.correctAnswer();
-                    winningsCounter++;
-                    calcGame();
-                } else {
-                    Engine.incorrectAnswerForDigits(userResult, correctResult);
-            }
+            userResult = Engine.getAnswerForDigits();
+            countCorrectAnswer(digitsResult);
+            boolean isCorrect = Engine.isAnswerCorrect(userResult, correctResult, winningsCounter);
+            isAnswerCorrect(isCorrect);
         } else if (winningsCounter == 2) {
             System.out.println("Question: " + digitsResult[0] + " - " + digitsResult[1]);
-            System.out.println("Your answer:");
-            int userResult = isEven.nextInt();
-            int correctResult = digitsResult[0] - digitsResult[1];
-                if (userResult == correctResult) {
-                    Engine.correctAnswer();
-                    winningsCounter++;
-                    calcGame();
-                } else {
-                    Engine.incorrectAnswerForDigits(userResult, correctResult);
-            }
-        } else if (winningsCounter == WINS_COUNT) {
-            Engine.gameDone();
+            userResult = Engine.getAnswerForDigits();
+            countCorrectAnswer(digitsResult);
+            boolean isCorrect = Engine.isAnswerCorrect(userResult, correctResult, winningsCounter);
+            isAnswerCorrect(isCorrect);
+        }
+    }
+
+    public static void countCorrectAnswer(int[] digits) {
+        if (winningsCounter == 0) {
+            correctResult = digits[0] + digits[1];
+        } else if (winningsCounter == 1) {
+            correctResult = digits[0] * digits[1];
+        } else if (winningsCounter == 2) {
+            correctResult = digits[0] - digits[1];
+        }
+    }
+
+    public static void isAnswerCorrect(boolean isAnswerCorrect) {
+        if (isAnswerCorrect) {
+            winningsCounter++;
+            calcGame();
+        } else {
+            Engine.incorrectAnswer(userResult, correctResult);
         }
     }
 }
