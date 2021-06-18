@@ -1,33 +1,15 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-import hexlet.code.Engine;
-
 public class Gcd {
-    private static int winningsCounter = 0;
-    private static int userResult;
     private static int correctResult;
-
-    public static void greetingGcd() {
-        Cli.greeting();
+    public static void gcdGameRules() {
         System.out.println("Find the greatest common divisor of given numbers.");
-        gcdGame();
     }
 
-    public static void gcdGame() {
-        int[] digitsResult = Engine.generateDigits();
-
-        System.out.printf("Question: %d %d\n", digitsResult[0], digitsResult[1]);
-        correctResult = findGcd(digitsResult[0], digitsResult[1]);
-        userResult = Engine.getAnswerForDigits();
-        boolean isAnswerCorrect = Engine.isAnswerCorrect(userResult, correctResult, winningsCounter);
-
-        if (isAnswerCorrect) {
-            winningsCounter++;
-            gcdGame();
-        } else {
-            Engine.incorrectAnswer(userResult, correctResult);
-        }
+    public static String gcdGameQuestion(int[] randomDigits) {
+        System.out.printf("Question: %d %d\n", randomDigits[0], randomDigits[1]);
+        correctResult = findGcd(randomDigits[0], randomDigits[1]);
+        return String.valueOf(correctResult);
     }
 
     public static int findGcd(int a, int b) {
