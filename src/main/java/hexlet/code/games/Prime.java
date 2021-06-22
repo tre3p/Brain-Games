@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 public class Prime {
     private static final int RANDOM_RANGE = 100;
-    public static String getRules() {
+    public static String printRules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
