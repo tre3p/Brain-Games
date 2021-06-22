@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 public class Even {
     private static final int RANDOM_RANGE = 1 + (int) (Math.random() * 100);
-    public static String getRules() {
+    public static String printRules() {
         return "Answer 'yes' if number even otherwise answer 'no'.";
     }
 
