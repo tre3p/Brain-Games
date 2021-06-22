@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 public class Calc {
-    private static int correctResult = 0;
     private static final int RANDOM_RANGE = 1 + (int) (Math.random() * 100);
     private static final int RANDOMISE_QUESTION = 3;
     private static final int FIRST_EXPRESSION = 1;
@@ -13,6 +12,7 @@ public class Calc {
     }
 
     public static String printQuestion() {
+        int correctResult = 0;
         int random = 1 + (int) (Math.random() * RANDOMISE_QUESTION);
         int[] digits = generateDigits();
         if (random == FIRST_EXPRESSION) {
