@@ -5,7 +5,7 @@ public class Progression {
     private static final int COMPLEXITY = 30;
     private static final int LENGTH_OF_PROGRESSION = 10;
     private static final int MIN_STEP = 5;
-    public static void getRules() {
+    public static void printRules() {
         System.out.println("What number is missing in the progression?");
     }
 
