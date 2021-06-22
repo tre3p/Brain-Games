@@ -8,7 +8,7 @@ public class Calc {
     private static final int SECOND_EXPRESSION = 2;
     private static final int THIRD_EXPRESSION = 3;
 
-    public static String getRules() {
+    public static String printRules() {
         return "What is the result of the expression?";
     }
 
