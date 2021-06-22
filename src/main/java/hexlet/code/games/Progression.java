@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 public class Progression {
-    private static String correctResult;
     private static final int COMPLEXITY = 30;
     private static final int LENGTH_OF_PROGRESSION = 10;
     private static final int MIN_STEP = 5;
@@ -10,6 +9,7 @@ public class Progression {
     }
 
     public static String printQuestion() {
+        String correctResult;
         int complexityOfProgression = MIN_STEP + (int) (Math.random() * COMPLEXITY);
         int differenceOfProgression = (int) (Math.random() * complexityOfProgression);
         correctResult = printProgression(complexityOfProgression, differenceOfProgression, LENGTH_OF_PROGRESSION);
@@ -17,6 +17,7 @@ public class Progression {
     }
 
     public static String printProgression(int a, int d, int n) {
+        String correctResult;
         StringBuilder sb = new StringBuilder();
         int temp = a;
         String result = "";
