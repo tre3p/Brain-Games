@@ -50,7 +50,7 @@ public class Engine {
         }
     }
 
-    public static void getEvenGameRules() {
+    public static void printEvenGameRules() {
         Even.getRules();
     }
 
@@ -68,7 +68,7 @@ public class Engine {
         }
     }
 
-    public static void getCalcGameRules() {
+    public static void printCalcGameRules() {
         Calc.getRules();
     }
 
@@ -86,7 +86,7 @@ public class Engine {
         }
     }
 
-    public static void getGcdGameRules() {
+    public static void printGcdGameRules() {
         Gcd.getRules();
     }
 
@@ -104,7 +104,7 @@ public class Engine {
         }
     }
 
-    public static void getProgressionGameRules() {
+    public static void printProgressionGameRules() {
         Progression.getRules();
     }
 
@@ -122,7 +122,7 @@ public class Engine {
         }
     }
 
-    public static void getPrimeGameRules() {
+    public static void printPrimeGameRules() {
         Prime.getRules();
     }
 }
