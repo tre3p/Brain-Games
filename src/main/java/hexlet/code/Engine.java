@@ -10,8 +10,6 @@ import java.util.Scanner;
 public class Engine {
     private static int winningsCounter;
     private static final int WINS_TO_VICTORY = 3;
-    private static String correctResult;
-    private static String userResult;
 
     public static void checkIfWin() {
         if (winningsCounter == WINS_TO_VICTORY) {
@@ -25,7 +23,7 @@ public class Engine {
     }
 
     public static void incorrectAnswer(String[] userAndCorrectResult) {
-        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'\n", userResult,
+        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'\n", userAndCorrectResult[0],
                         userAndCorrectResult[1]);
         System.out.printf("Let's try again, %s!", Cli.getName());
     }
@@ -33,13 +31,13 @@ public class Engine {
     public static String getAnswer() {
         Scanner result = new Scanner(System.in);
         System.out.println("Your answer:");
-        userResult = result.nextLine();
+        String userResult = result.nextLine();
         return userResult;
     }
 
     public static void evenGameEngine() {
         String[] qa = Even.printQuestion();
-        userResult = Engine.getAnswer();
+        String userResult = Engine.getAnswer();
         if (userResult.equals(qa[1])) {
             Engine.correctAnswer();
             winningsCounter++;
@@ -55,8 +53,8 @@ public class Engine {
     }
 
     public static void calcGameEngine() {
-        correctResult = Calc.printQuestion();
-        userResult = Engine.getAnswer();
+        String correctResult = Calc.printQuestion();
+        String userResult = Engine.getAnswer();
         String[] qa = {userResult, correctResult};
         if (userResult.equals(correctResult)) {
             Engine.correctAnswer();
@@ -73,8 +71,8 @@ public class Engine {
     }
 
     public static void gcdGameEngine() {
-        correctResult = Gcd.gcdGameQuestion();
-        userResult = Engine.getAnswer();
+        String correctResult = Gcd.gcdGameQuestion();
+        String userResult = Engine.getAnswer();
         String[] qa = {userResult, correctResult};
         if (userResult.equals(correctResult)) {
             Engine.correctAnswer();
@@ -91,8 +89,8 @@ public class Engine {
     }
 
     public static void progressionGameEngine() {
-        correctResult = Progression.printQuestion();
-        userResult = Engine.getAnswer();
+        String correctResult = Progression.printQuestion();
+        String userResult = Engine.getAnswer();
         String[] qa = {userResult, correctResult};
         if (userResult.equals(correctResult)) {
             Engine.correctAnswer();
@@ -109,8 +107,8 @@ public class Engine {
     }
 
     public static void primeGameEngine() {
-        correctResult = Prime.printQuestion();
-        userResult = Engine.getAnswer();
+        String correctResult = Prime.printQuestion();
+        String userResult = Engine.getAnswer();
         String[] qa = {userResult, correctResult};
         if (userResult.equals(correctResult)) {
             Engine.correctAnswer();
