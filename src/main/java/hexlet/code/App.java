@@ -18,19 +18,29 @@ public class App {
                 Cli.greeting();
                 break;
             case FIRST_GAME:
-                Engine.evenGameGreetingRules();
+                Cli.greeting();
+                Engine.getEvenGameRules();
+                Engine.evenGameEngine();
                 break;
             case SECOND_GAME:
-                Engine.calcGameGreetingRules();
+                Cli.greeting();
+                Engine.getCalcGameRules();
+                Engine.calcGameEngine();
                 break;
             case THIRD_GAME:
-                Engine.gcdGameGreetingsRules();
+                Cli.greeting();
+                Engine.getGcdGameRules();
+                Engine.gcdGameEngine();
                 break;
             case FOURTH_GAME:
-                Engine.progressionGameGreetingRules();
+                Cli.greeting();
+                Engine.getProgressionGameRules();
+                Engine.progressionGameEngine();
                 break;
             case SIXTH_GAME:
-                Engine.primeGameGreetingRules();
+                Cli.greeting();
+                Engine.getPrimeGameRules();
+                Engine.primeGameEngine();
                 break;
             default:
                 break;

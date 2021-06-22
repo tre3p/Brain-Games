@@ -8,49 +8,26 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int RANDOM_RANGE = 100;
-    private static final int WINS_COUNT = 2;
     private static int winningsCounter;
-    private static final int LENGTH_OF_PROGRESSION = 10;
-    private static final int COMPLEXITY = 30;
+    private static final int WINS_TO_VICTORY = 3;
     private static String correctResult;
     private static String userResult;
 
-    public static int[] generateDigits() {
-        int[] digits = new int[2];
-        int firstRandomDigit = (int) (Math.random() * RANDOM_RANGE);
-        int secondRandomDigit = (int) (Math.random() * RANDOM_RANGE);
-        digits[0] = firstRandomDigit;
-        digits[1] = secondRandomDigit;
-        return digits;
+    public static void checkIfWin() {
+        if (winningsCounter == WINS_TO_VICTORY) {
+            System.out.printf("Congratulations, %s!", Cli.getName());
+            System.exit(0);
+        }
     }
 
     public static void correctAnswer() {
         System.out.println("Correct!");
     }
 
-    public static void incorrectAnswer() {
-        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'\n", userResult, correctResult);
+    public static void incorrectAnswer(String[] userAndCorrectResult) {
+        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'\n", userResult,
+                        userAndCorrectResult[1]);
         System.out.printf("Let's try again, %s!", Cli.getName());
-    }
-
-    public static void gameDone() {
-        System.out.printf("Congratulations, %s!", Cli.getName());
-        System.exit(0);
-    }
-
-    public static boolean isAnswerCorrect() {
-        boolean isAnswerCorrect = false;
-
-        if (userResult.equals(correctResult)) {
-            Engine.correctAnswer();
-            isAnswerCorrect = true;
-        }
-
-        if (winningsCounter == WINS_COUNT && isAnswerCorrect) {
-            Engine.gameDone();
-        }
-        return isAnswerCorrect;
     }
 
     public static String getAnswer() {
@@ -60,109 +37,92 @@ public class Engine {
         return userResult;
     }
 
-
-    public static void gcdGameGreetingsRules() {
-        Cli.greeting();
-        Gcd.gcdGameRules();
-        gcdGameEngine();
-    }
-
-    public static void progressionGameGreetingRules() {
-        Cli.greeting();
-        Progression.progressionGameRules();
-        progressionGameEngine();
-    }
-
-    public static void primeGameGreetingRules() {
-        Cli.greeting();
-        Prime.primeGameRules();
-        primeGameEngine();
-    }
-
-    public static void evenGameGreetingRules() {
-        Cli.greeting();
-        Even.evenGameRules();
-        evenGameEngine();
-    }
-
-    public static void calcGameGreetingRules() {
-        Cli.greeting();
-        Calc.calcGameRules();
-        calcGameEngine();
-    }
-
-    public static void gcdGameEngine() {
-        correctResult = Gcd.gcdGameQuestion(Engine.generateDigits());
-        userResult = Engine.getAnswer();
-        boolean isAnswerCorrect = Engine.isAnswerCorrect();
-        if (isAnswerCorrect) {
-            winningsCounter++;
-            Engine.gcdGameEngine();
-        } else {
-            Engine.incorrectAnswer();
-        }
-    }
-
-    public static void progressionGameEngine() {
-        int complexityOfProgression = (int) (Math.random() * COMPLEXITY);
-        int differenceOfProgression = (int) (Math.random() * complexityOfProgression);
-        correctResult = Progression.printProgression(complexityOfProgression, differenceOfProgression,
-                        LENGTH_OF_PROGRESSION);
-        userResult = Engine.getAnswer();
-        boolean isAnswerCorrect = Engine.isAnswerCorrect();
-        if (isAnswerCorrect) {
-            winningsCounter++;
-            Engine.progressionGameEngine();
-        } else {
-            Engine.incorrectAnswer();
-        }
-    }
-
-    public static void primeGameEngine() {
-        boolean isPrime = Prime.checkIsPrime(Engine.generateDigits());
-        userResult = Engine.getAnswer();
-        if (isPrime) {
-            correctResult = "yes";
-        } else {
-            correctResult = "no";
-        }
-        boolean isAnswerCorrect = Engine.isAnswerCorrect();
-        if (isAnswerCorrect) {
-            winningsCounter++;
-            Engine.primeGameEngine();
-        } else {
-            Engine.incorrectAnswer();
-        }
-    }
-
     public static void evenGameEngine() {
-        int[] num = Engine.generateDigits();
-        Even.evenGame(num[0]);
+        String[] qa = Even.printQuestion();
         userResult = Engine.getAnswer();
-        if (num[0] % 2 == 0) {
-            correctResult = "yes";
-        } else {
-            correctResult = "no";
-        }
-        boolean isAnswerCorrect = Engine.isAnswerCorrect();
-        if (isAnswerCorrect) {
+        if (userResult.equals(qa[1])) {
+            Engine.correctAnswer();
             winningsCounter++;
+            Engine.checkIfWin();
             Engine.evenGameEngine();
         } else {
-            Engine.incorrectAnswer();
+            Engine.incorrectAnswer(qa);
         }
+    }
+
+    public static void getEvenGameRules() {
+        Even.getRules();
     }
 
     public static void calcGameEngine() {
-        int[] digits = Engine.generateDigits();
-        correctResult = Calc.calcGame(digits, winningsCounter);
+        correctResult = Calc.printQuestion();
         userResult = Engine.getAnswer();
-        boolean isAnswerCorrect = Engine.isAnswerCorrect();
-        if (isAnswerCorrect) {
+        String[] qa = {userResult, correctResult};
+        if (userResult.equals(correctResult)) {
+            Engine.correctAnswer();
             winningsCounter++;
+            Engine.checkIfWin();
             Engine.calcGameEngine();
         } else {
-            Engine.incorrectAnswer();
+            Engine.incorrectAnswer(qa);
         }
+    }
+
+    public static void getCalcGameRules() {
+        Calc.getRules();
+    }
+
+    public static void gcdGameEngine() {
+        correctResult = Gcd.gcdGameQuestion();
+        userResult = Engine.getAnswer();
+        String[] qa = {userResult, correctResult};
+        if (userResult.equals(correctResult)) {
+            Engine.correctAnswer();
+            winningsCounter++;
+            Engine.checkIfWin();
+            Engine.gcdGameEngine();
+        } else {
+            Engine.incorrectAnswer(qa);
+        }
+    }
+
+    public static void getGcdGameRules() {
+        Gcd.getRules();
+    }
+
+    public static void progressionGameEngine() {
+        correctResult = Progression.printQuestion();
+        userResult = Engine.getAnswer();
+        String[] qa = {userResult, correctResult};
+        if (userResult.equals(correctResult)) {
+            Engine.correctAnswer();
+            winningsCounter++;
+            Engine.checkIfWin();
+            Engine.progressionGameEngine();
+        } else {
+            Engine.incorrectAnswer(qa);
+        }
+    }
+
+    public static void getProgressionGameRules() {
+        Progression.getRules();
+    }
+
+    public static void primeGameEngine() {
+        correctResult = Prime.checkIsPrime();
+        userResult = Engine.getAnswer();
+        String[] qa = {userResult, correctResult};
+        if (userResult.equals(correctResult)) {
+            Engine.correctAnswer();
+            winningsCounter++;
+            Engine.checkIfWin();
+            Engine.primeGameEngine();
+        } else {
+            Engine.incorrectAnswer(qa);
+        }
+    }
+
+    public static void getPrimeGameRules() {
+        Prime.getRules();
     }
 }
