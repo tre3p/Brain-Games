@@ -109,7 +109,7 @@ public class Engine {
     }
 
     public static void primeGameEngine() {
-        correctResult = Prime.checkIsPrime();
+        correctResult = Prime.printQuestion();
         userResult = Engine.getAnswer();
         String[] qa = {userResult, correctResult};
         if (userResult.equals(correctResult)) {
