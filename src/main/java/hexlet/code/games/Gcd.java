@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 public class Gcd {
     private static final int RANDOM_RANGE = 1 + (int) (Math.random() * 100);
-    public static void getRules() {
+    public static void printRules() {
         System.out.println("Find the greatest common divisor of given numbers.");
     }
 
