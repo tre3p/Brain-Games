@@ -7,7 +7,7 @@
 
 Example of winning the Even game:
 
-<script id="asciicast-9qxj3BtVIApeZOoAJV7vx23zs" src="https://asciinema.org/a/9qxj3BtVIApeZOoAJV7vx23zs.js" async></script>
+<a href="https://asciinema.org/a/9qxj3BtVIApeZOoAJV7vx23zs" target="_blank"><img src="https://asciinema.org/a/9qxj3BtVIApeZOoAJV7vx23zs.svg" /></a>
 
 Example of losing the Even game:
 
