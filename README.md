@@ -15,9 +15,13 @@ Example of losing the Even game:
 
 [CALC GAME]
 
-Example of winning the Calc game - https://asciinema.org/a/iH148LSR4loF2mtK8x0h8NmEB
+Example of winning the Calc game:
 
-Example of losing the Calc game - https://asciinema.org/a/nYuuiOslUhmNjUTriOnOs5d3q
+<a href="https://asciinema.org/a/kuNwx5TeHxUrqgNE3wQZJ66yD" target="_blank"><img src="https://asciinema.org/a/kuNwx5TeHxUrqgNE3wQZJ66yD.svg" /></a>
+
+Example of losing the Calc game:
+
+<a href="https://asciinema.org/a/xOycekSov03Fbeka7qwwPPXLw" target="_blank"><img src="https://asciinema.org/a/xOycekSov03Fbeka7qwwPPXLw.svg" /></a>
 
 [GDC GAME]
 
