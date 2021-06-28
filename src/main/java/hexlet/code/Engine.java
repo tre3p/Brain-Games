@@ -43,37 +43,11 @@ public class Engine {
         return userResult;
     }
 
-    public static void evenGameEngine(String[][] qa) {
+    public static void gameEngine(String[][] qa, String rules) {
         greeting();
         int i = 0;
         if (winningsCounter == 0) {
-            printEvenGameRules();
-        }
-        for (int j = 1; j < QUESTIONS_QUANTITY; j++) {
-            System.out.printf("Question: %s\n", qa[i][0]);
-            String userResult = Engine.getAnswer();
-            if (userResult.equals(qa[i][1])) {
-                i++;
-                Engine.correctAnswer();
-                winningsCounter++;
-                Engine.checkIfWin();
-                } else {
-                String correctResult = qa[i][1];
-                Engine.incorrectAnswer(userResult, correctResult);
-                System.exit(0);
-                }
-            }
-    }
-
-    public static void printEvenGameRules() {
-        System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
-    }
-
-    public static void calcGameEngine(String[][] qa) {
-        greeting();
-        int i = 0;
-        if (winningsCounter == 0) {
-            printCalcGameRules();
+            System.out.println(rules);
         }
         for (int j = 1; j < QUESTIONS_QUANTITY; j++) {
             System.out.printf("Question: %s\n", qa[i][0]);
@@ -89,87 +63,5 @@ public class Engine {
                 System.exit(0);
             }
         }
-    }
-
-    public static void printCalcGameRules() {
-        System.out.println("What is the result of the expression?");
-    }
-
-    public static void gcdGameEngine(String[][] qa) {
-        greeting();
-        int i = 0;
-        if (winningsCounter == 0) {
-            printGdcGameRules();
-        }
-        for (int j = 1; j < QUESTIONS_QUANTITY; j++) {
-            System.out.printf("Question: %s\n", qa[i][0]);
-            String userResult = Engine.getAnswer();
-            if (userResult.equals(qa[i][1])) {
-                i++;
-                Engine.correctAnswer();
-                winningsCounter++;
-                Engine.checkIfWin();
-            } else {
-                String correctResult = qa[i][1];
-                Engine.incorrectAnswer(userResult, correctResult);
-                System.exit(0);
-            }
-        }
-    }
-
-    public static void printGdcGameRules() {
-        System.out.println("Find the greatest common divisor of given numbers.");
-    }
-
-    public static void progressionGameEngine(String[][] qa) {
-        greeting();
-        int i = 0;
-        if (winningsCounter == 0) {
-            printProgressionGameRules();
-        }
-        for (int j = 1; j < QUESTIONS_QUANTITY; j++) {
-            System.out.printf("Question: %s\n", qa[i][0]);
-            String userResult = Engine.getAnswer();
-            if (userResult.equals(qa[i][1])) {
-                i++;
-                Engine.correctAnswer();
-                winningsCounter++;
-                Engine.checkIfWin();
-            } else {
-                String correctResult = qa[i][1];
-                Engine.incorrectAnswer(userResult, correctResult);
-                System.exit(0);
-            }
-        }
-    }
-
-    public static void printProgressionGameRules() {
-        System.out.println("What number is missing in the progression?");
-    }
-
-    public static void primeGameEngine(String[][] qa) {
-        greeting();
-        int i = 0;
-        if (winningsCounter == 0) {
-            printPrimeGameRules();
-        }
-        for (int j = 1; j < QUESTIONS_QUANTITY; j++) {
-            System.out.printf("Question: %s\n", qa[i][0]);
-            String userResult = Engine.getAnswer();
-            if (userResult.equals(qa[i][1])) {
-                i++;
-                Engine.correctAnswer();
-                winningsCounter++;
-                Engine.checkIfWin();
-            } else {
-                String correctResult = qa[i][1];
-                Engine.incorrectAnswer(userResult, correctResult);
-                System.exit(0);
-            }
-        }
-    }
-
-    public static void printPrimeGameRules() {
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
 }

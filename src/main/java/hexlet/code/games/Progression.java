@@ -9,6 +9,10 @@ public class Progression {
     private static final int QUESTIONS_QUANTITY = 3;
     private static final int ANSWERS_QUANTITY = 2;
 
+    public static String printRules() {
+        return "What number is missing in the progression?";
+    }
+
     public static void generateQuestionAndAnswer() {
         String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
         int firstComplexityOfProgression = MIN_STEP + (int) (Math.random() * COMPLEXITY);
@@ -27,7 +31,7 @@ public class Progression {
         qa[0][1] = firstProgressionAndAnswer[1];
         qa[1][1] = secondProgressionAndAnswer[1];
         qa[2][1] = thirdProgressionAndAnswer[1];
-        Engine.progressionGameEngine(qa);
+        Engine.gameEngine(qa, printRules());
     }
 
     public static String[] printProgression(int complexity, int difference, int length) {
