@@ -6,9 +6,11 @@
 [EVEN GAME]
 
 Example of winning the Even game:
-<a href="https://asciinema.org/a/2lRebf5e5PrCV925L4eYYSoEX" target="_blank"><img src="https://asciinema.org/a/2lRebf5e5PrCV925L4eYYSoEX.svg" /></a>
+
+<script id="asciicast-9qxj3BtVIApeZOoAJV7vx23zs" src="https://asciinema.org/a/9qxj3BtVIApeZOoAJV7vx23zs.js" async></script>
 
 Example of losing the Even game:
+
 <a href="https://asciinema.org/a/9qxj3BtVIApeZOoAJV7vx23zs" target="_blank"><img src="https://asciinema.org/a/9qxj3BtVIApeZOoAJV7vx23zs.svg" /></a>
 
 [CALC GAME]
