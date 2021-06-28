@@ -1,34 +1,54 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/k0damaDEV/java-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/k0damaDEV/java-project-lvl1/actions)
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+<a href="https://codeclimate.com/github/k0damaDEV/java-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/b849edcd1687bf83785f/maintainability" /></a>
 ![example workflow](https://github.com/k0damaDEV/java-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)
 
 [EVEN GAME]
 
-Example of winning the Even game - https://asciinema.org/a/iBC5kIb0OpRezIAXUWxxtHfUP
+Example of winning the Even game:
 
-Example of losing the Even game - https://asciinema.org/a/NZfRVf13IwNQ4OSYNxf72rSCY
+<a href="https://asciinema.org/a/9qxj3BtVIApeZOoAJV7vx23zs" target="_blank"><img src="https://asciinema.org/a/9qxj3BtVIApeZOoAJV7vx23zs.svg" /></a>
+
+Example of losing the Even game:
+
+<a href="https://asciinema.org/a/9qxj3BtVIApeZOoAJV7vx23zs" target="_blank"><img src="https://asciinema.org/a/9qxj3BtVIApeZOoAJV7vx23zs.svg" /></a>
 
 [CALC GAME]
 
-Example of winning the Calc game - https://asciinema.org/a/iH148LSR4loF2mtK8x0h8NmEB
+Example of winning the Calc game:
 
-Example of losing the Calc game - https://asciinema.org/a/nYuuiOslUhmNjUTriOnOs5d3q
+<a href="https://asciinema.org/a/kuNwx5TeHxUrqgNE3wQZJ66yD" target="_blank"><img src="https://asciinema.org/a/kuNwx5TeHxUrqgNE3wQZJ66yD.svg" /></a>
+
+Example of losing the Calc game:
+
+<a href="https://asciinema.org/a/xOycekSov03Fbeka7qwwPPXLw" target="_blank"><img src="https://asciinema.org/a/xOycekSov03Fbeka7qwwPPXLw.svg" /></a>
 
 [GDC GAME]
 
-Example of winning the GDC game - https://asciinema.org/a/unhnkuzx8oePjri6Llr8YU24q
+Example of winning the GDC game:
 
-Example of losing the GDC game - https://asciinema.org/a/Y8m4voEOMb77NAPTWGAtOGhHl
+<a href="https://asciinema.org/a/tzFvKj0h9ehZj8syspJsmgLEg" target="_blank"><img src="https://asciinema.org/a/tzFvKj0h9ehZj8syspJsmgLEg.svg" /></a>
+
+Example of losing the GDC game:
+
+<a href="https://asciinema.org/a/lmp91NHcCvL8KwifTilSo5cuO" target="_blank"><img src="https://asciinema.org/a/lmp91NHcCvL8KwifTilSo5cuO.svg" /></a>
 
 [PROGRESSION GAME]
 
-Example of winning the Progression game -  https://asciinema.org/a/quVE8OxrFgNzMlZXiMgWmNmkj
+Example of winning the Progression game:
 
-Example of losing the Progression game - https://asciinema.org/a/w3xwgPt1lPtUxQllTOgnG2LVh
+<a href="https://asciinema.org/a/KaPAVt5lujVUPIdlBXJqJPvQK" target="_blank"><img src="https://asciinema.org/a/KaPAVt5lujVUPIdlBXJqJPvQK.svg" /></a>
+
+Example of losing the Progression game:
+
+<a href="https://asciinema.org/a/AiVkOh4zT2XJzkLssjUFL4pDT" target="_blank"><img src="https://asciinema.org/a/AiVkOh4zT2XJzkLssjUFL4pDT.svg" /></a>
 
 [PRIME GAME]
 
-Example of winning the Prime game - https://asciinema.org/a/OSZe05el3rdvCJHSyB0T9JaDq
+Example of winning the Prime game:
 
-Example of losing the Prime game -  https://asciinema.org/a/UzpPfoX0eyy6iYhcrOqQsbRi6
+<a href="https://asciinema.org/a/vb0brscl7ysWBeoIejl0ilxfG" target="_blank"><img src="https://asciinema.org/a/vb0brscl7ysWBeoIejl0ilxfG.svg" /></a>
+
+Example of losing the Prime game:
+
+<a href="https://asciinema.org/a/T6BVkBkIHEW1bejhzgbzvD9k5" target="_blank"><img src="https://asciinema.org/a/T6BVkBkIHEW1bejhzgbzvD9k5.svg" /></a>
