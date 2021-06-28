@@ -1,5 +1,10 @@
 package hexlet.code;
 
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Gcd;
+import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class App {
@@ -15,32 +20,22 @@ public class App {
         int result = chooseGame.nextInt();
         switch (result) {
             case 1:
-                Cli.greeting();
+                Engine.greeting();
                 break;
             case FIRST_GAME:
-                Cli.greeting();
-                Engine.printEvenGameRules();
-                Engine.evenGameEngine();
+                Even.generateQuestionAndAnswer();
                 break;
             case SECOND_GAME:
-                Cli.greeting();
-                Engine.printCalcGameRules();
-                Engine.calcGameEngine();
+                Calc.generateQuestionAndAnswer();
                 break;
             case THIRD_GAME:
-                Cli.greeting();
-                Engine.printGcdGameRules();
-                Engine.gcdGameEngine();
+                Gcd.generateQuestionAndAnswer();
                 break;
             case FOURTH_GAME:
-                Cli.greeting();
-                Engine.printProgressionGameRules();
-                Engine.progressionGameEngine();
+                Progression.generateQuestionAndAnswer();
                 break;
             case SIXTH_GAME:
-                Cli.greeting();
-                Engine.printPrimeGameRules();
-                Engine.primeGameEngine();
+                Prime.generateQuestionAndAnswer();
                 break;
             default:
                 break;

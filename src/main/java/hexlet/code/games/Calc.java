@@ -1,37 +1,23 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+import hexlet.code.Utils;
+
 public class Calc {
-    private static final int RANDOM_RANGE = 1 + (int) (Math.random() * 100);
-    private static final int RANDOMISE_QUESTION = 3;
-    private static final int FIRST_EXPRESSION = 1;
-    private static final int SECOND_EXPRESSION = 2;
-    private static final int THIRD_EXPRESSION = 3;
+    private static final int QUESTIONS_QUANTITY = 3;
+    private static final int ANSWERS_QUANTITY = 2;
+    public static void generateQuestionAndAnswer() {
+        String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
+        int[] firstPartOfRandomise = Utils.generateDigits();
+        int[] secondPartOfRandomise = Utils.generateDigits();
+        int[] thirdPartOfRandomise = Utils.generateDigits();
 
-    public static String printRules() {
-        return "What is the result of the expression?";
-    }
-
-    public static String printQuestion() {
-        int correctResult = 0;
-        int random = 1 + (int) (Math.random() * RANDOMISE_QUESTION);
-        int[] digits = generateDigits();
-        if (random == FIRST_EXPRESSION) {
-            correctResult = digits[0] + digits[1];
-            System.out.printf("Question: %d + %d\n", digits[0], digits[1]);
-        } else if (random == SECOND_EXPRESSION) {
-            correctResult = digits[0] * digits[1];
-            System.out.printf("Question: %d * %d\n", digits[0], digits[1]);
-        } else if (random == THIRD_EXPRESSION) {
-            correctResult = digits[0] - digits[1];
-            System.out.printf("Question: %d - %d\n", digits[0], digits[1]);
-        }
-        return String.valueOf(correctResult);
-    }
-
-    public static int[] generateDigits() {
-        int[] digits = new int[2];
-        digits[0] = (int) (Math.random() * RANDOM_RANGE);
-        digits[1] = (int) (Math.random() * RANDOM_RANGE);
-        return digits;
+        qa[0][0] = String.format("%d + %d", firstPartOfRandomise[0], firstPartOfRandomise[1]);
+        qa[1][0] = String.format("%d - %d", secondPartOfRandomise[0], secondPartOfRandomise[1]);
+        qa[2][0] = String.format("%d * %d", thirdPartOfRandomise[0], thirdPartOfRandomise[1]);
+        qa[0][1] = String.valueOf(firstPartOfRandomise[0] + firstPartOfRandomise[1]);
+        qa[1][1] = String.valueOf(secondPartOfRandomise[0] - secondPartOfRandomise[1]);
+        qa[2][1] = String.valueOf(thirdPartOfRandomise[0] * thirdPartOfRandomise[1]);
+        Engine.calcGameEngine(qa);
     }
 }
