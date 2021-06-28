@@ -25,18 +25,30 @@ Example of losing the Calc game:
 
 [GDC GAME]
 
-Example of winning the GDC game - https://asciinema.org/a/unhnkuzx8oePjri6Llr8YU24q
+Example of winning the GDC game:
 
-Example of losing the GDC game - https://asciinema.org/a/Y8m4voEOMb77NAPTWGAtOGhHl
+<a href="https://asciinema.org/a/tzFvKj0h9ehZj8syspJsmgLEg" target="_blank"><img src="https://asciinema.org/a/tzFvKj0h9ehZj8syspJsmgLEg.svg" /></a>
+
+Example of losing the GDC game:
+
+<a href="https://asciinema.org/a/lmp91NHcCvL8KwifTilSo5cuO" target="_blank"><img src="https://asciinema.org/a/lmp91NHcCvL8KwifTilSo5cuO.svg" /></a>
 
 [PROGRESSION GAME]
 
-Example of winning the Progression game -  https://asciinema.org/a/quVE8OxrFgNzMlZXiMgWmNmkj
+Example of winning the Progression game:
 
-Example of losing the Progression game - https://asciinema.org/a/w3xwgPt1lPtUxQllTOgnG2LVh
+<a href="https://asciinema.org/a/KaPAVt5lujVUPIdlBXJqJPvQK" target="_blank"><img src="https://asciinema.org/a/KaPAVt5lujVUPIdlBXJqJPvQK.svg" /></a>
+
+Example of losing the Progression game:
+
+<a href="https://asciinema.org/a/AiVkOh4zT2XJzkLssjUFL4pDT" target="_blank"><img src="https://asciinema.org/a/AiVkOh4zT2XJzkLssjUFL4pDT.svg" /></a>
 
 [PRIME GAME]
 
-Example of winning the Prime game - https://asciinema.org/a/OSZe05el3rdvCJHSyB0T9JaDq
+Example of winning the Prime game:
 
-Example of losing the Prime game -  https://asciinema.org/a/UzpPfoX0eyy6iYhcrOqQsbRi6
+<a href="https://asciinema.org/a/vb0brscl7ysWBeoIejl0ilxfG" target="_blank"><img src="https://asciinema.org/a/vb0brscl7ysWBeoIejl0ilxfG.svg" /></a>
+
+Example of losing the Prime game:
+
+<a href="https://asciinema.org/a/T6BVkBkIHEW1bejhzgbzvD9k5" target="_blank"><img src="https://asciinema.org/a/T6BVkBkIHEW1bejhzgbzvD9k5.svg" /></a>
