@@ -11,7 +11,6 @@ public class Engine {
     public static void checkIfWin() {
         if (winningsCounter == WINS_TO_VICTORY) {
             System.out.printf("Congratulations, %s!", getName());
-            System.exit(0);
         }
     }
 
