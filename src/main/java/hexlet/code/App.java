@@ -23,19 +23,19 @@ public class App {
                 Engine.greeting();
                 break;
             case FIRST_GAME:
-                Even.generateQuestionAndAnswer();
+                Even.launchEvenGame();
                 break;
             case SECOND_GAME:
-                Calc.generateQuestionAndAnswer();
+                Calc.launchCalcGame();
                 break;
             case THIRD_GAME:
-                Gcd.generateQuestionAndAnswer();
+                Gcd.launchGcdGame();
                 break;
             case FOURTH_GAME:
-                Progression.generateQuestionAndAnswer();
+                Progression.launchProgressionGame();
                 break;
             case SIXTH_GAME:
-                Prime.generateQuestionAndAnswer();
+                Prime.launchPrimeGame();
                 break;
             default:
                 break;

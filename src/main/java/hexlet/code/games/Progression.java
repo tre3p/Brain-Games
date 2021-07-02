@@ -9,11 +9,11 @@ public class Progression {
     private static final int QUESTIONS_QUANTITY = 3;
     private static final int ANSWERS_QUANTITY = 2;
 
-    public static String printRules() {
+    public static String getRules() {
         return "What number is missing in the progression?";
     }
 
-    public static void generateQuestionAndAnswer() {
+    public static void launchProgressionGame() {
         String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
         int firstComplexityOfProgression = MIN_STEP + (int) (Math.random() * COMPLEXITY);
         int secondcomplexityOfProgression = MIN_STEP + (int) (Math.random() * COMPLEXITY);
@@ -31,7 +31,7 @@ public class Progression {
         qa[0][1] = firstProgressionAndAnswer[1];
         qa[1][1] = secondProgressionAndAnswer[1];
         qa[2][1] = thirdProgressionAndAnswer[1];
-        Engine.gameEngine(qa, printRules());
+        Engine.gameEngine(qa, getRules());
     }
 
     public static String[] printProgression(int complexity, int difference, int length) {

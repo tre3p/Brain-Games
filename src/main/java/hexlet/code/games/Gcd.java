@@ -6,23 +6,23 @@ import hexlet.code.Utils;
 public class Gcd {
     private static final int QUESTIONS_QUANTITY = 3;
     private static final int ANSWERS_QUANTITY = 2;
+    private static final int MAX_RANGE_TO_GENERATE_DIGITS = 100;
+    private static final int QUANTITY_OF_RANDOM_DIGITS = 6;
 
-    public static String printRules() {
+    public static String getRules() {
         return "Find the greatest common divisor of given numbers.";
     }
 
-    public static void generateQuestionAndAnswer() {
+    public static void launchGcdGame() {
+        int counter = 0;
         String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
-        int[] firstPartOfRandomise = Utils.generateDigits();
-        int[] secondPartOfRandomise = Utils.generateDigits();
-        int[] thirdPartOfRandomise = Utils.generateDigits();
-        qa[0][0] = String.format("%d %d", firstPartOfRandomise[0], firstPartOfRandomise[1]);
-        qa[1][0] = String.format("%d %d", secondPartOfRandomise[0], secondPartOfRandomise[1]);
-        qa[2][0] = String.format("%d %d", thirdPartOfRandomise[0], thirdPartOfRandomise[1]);
-        qa[0][1] = String.valueOf(findGcd(firstPartOfRandomise[0], firstPartOfRandomise[1]));
-        qa[1][1] = String.valueOf(findGcd(secondPartOfRandomise[0], secondPartOfRandomise[1]));
-        qa[2][1] = String.valueOf(findGcd(thirdPartOfRandomise[0], thirdPartOfRandomise[1]));
-        Engine.gameEngine(qa, printRules());
+        int[] randomDigits = Utils.generateDigits(1, MAX_RANGE_TO_GENERATE_DIGITS, QUANTITY_OF_RANDOM_DIGITS);
+        for (int i = 0; i != QUANTITY_OF_RANDOM_DIGITS / 2; i++) {
+            qa[i][0] = String.format("%d %d", randomDigits[counter], randomDigits[counter + 1]);
+            qa[i][1] = String.valueOf(findGcd(randomDigits[counter], randomDigits[counter + 1]));
+            counter = counter + 2;
+        }
+        Engine.gameEngine(qa, getRules());
     }
 
     public static int findGcd(int a, int b) {

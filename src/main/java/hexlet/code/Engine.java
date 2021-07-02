@@ -6,11 +6,11 @@ public class Engine {
     private static int winningsCounter;
     private static final int WINS_TO_VICTORY = 3;
     private static String name;
-    private static final int QUESTIONS_QUANTITY = 4;
+    private static final int QUESTIONS_QUANTITY = 3;
 
     public static void checkIfWin() {
         if (winningsCounter == WINS_TO_VICTORY) {
-            System.out.printf("Congratulations, %s!", Engine.getName());
+            System.out.printf("Congratulations, %s!", getName());
             System.exit(0);
         }
     }
@@ -49,18 +49,18 @@ public class Engine {
         if (winningsCounter == 0) {
             System.out.println(rules);
         }
-        for (int j = 1; j < QUESTIONS_QUANTITY; j++) {
+        for (int j = 0; j != QUESTIONS_QUANTITY; j++) {
             System.out.printf("Question: %s\n", qa[i][0]);
             String userResult = Engine.getAnswer();
-            if (userResult.equals(qa[i][1])) {
+            if (userResult.equals(qa[j][1])) {
                 i++;
                 Engine.correctAnswer();
                 winningsCounter++;
                 Engine.checkIfWin();
             } else {
-                String correctResult = qa[i][1];
+                String correctResult = qa[j][1];
                 Engine.incorrectAnswer(userResult, correctResult);
-                System.exit(0);
+                break;
             }
         }
     }

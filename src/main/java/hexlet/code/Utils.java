@@ -1,12 +1,21 @@
 package hexlet.code;
 
+import java.util.Arrays;
+
 public class Utils {
-    private static final int MIN_RANGE = 1;
-    private static final int MAX_RANGE = 100;
-    public static int[] generateDigits() {
-        int[] digits = new int[2];
-        digits[0] = MIN_RANGE + (int) (Math.random() * MAX_RANGE);
-        digits[1] = MIN_RANGE + (int) (Math.random() * MAX_RANGE);
-        return digits;
+    private static final int MAX_DIGITS_COUNT = 6;
+    public static int[] generateDigits(int minRange, int maxRange, int quantity) {
+        int[] digits = new int[MAX_DIGITS_COUNT];
+        int counter = 0;
+        for (int i = 0; i != quantity; i++) {
+            digits[i] = minRange + (int) (Math.random() * maxRange);
+        }
+        for (int j = 0; j < digits.length; j++) {
+            if (digits[j] == 0) {
+                counter++;
+            }
+        }
+        digits = Arrays.copyOf(digits, digits.length - counter);
+         return digits;
     }
 }

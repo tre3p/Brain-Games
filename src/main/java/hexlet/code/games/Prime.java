@@ -6,22 +6,21 @@ import hexlet.code.Utils;
 public class Prime {
     private static final int QUESTIONS_QUANTITY = 3;
     private static final int ANSWERS_QUANTITY = 2;
+    private static final int MAX_RANGE_TO_GENERATE_DIGITS = 100;
+    private static final int QUANTITY_OF_RANDOM_DIGITS = 3;
 
-    public static String printRules() {
+    public static String getRules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
-    public static void generateQuestionAndAnswer() {
+    public static void launchPrimeGame() {
         String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
-        int[] firstPartOfDigits = Utils.generateDigits();
-        int[] secondPartOfDigits = Utils.generateDigits();
-        qa[0][0] = String.valueOf(firstPartOfDigits[0]);
-        qa[1][0] = String.valueOf(firstPartOfDigits[1]);
-        qa[2][0] = String.valueOf(secondPartOfDigits[0]);
-        qa[0][1] = isPrime(firstPartOfDigits[0]) ? "yes" : "no";
-        qa[1][1] = isPrime(firstPartOfDigits[1]) ? "yes" : "no";
-        qa[2][1] = isPrime(secondPartOfDigits[0]) ? "yes" : "no";
-        Engine.gameEngine(qa, printRules());
+        int[] randomDigits = Utils.generateDigits(1, MAX_RANGE_TO_GENERATE_DIGITS, QUANTITY_OF_RANDOM_DIGITS);
+        for (int i = 0; i != randomDigits.length; i++) {
+            qa[i][0] = String.valueOf(randomDigits[i]);
+            qa[i][1] = isPrime(randomDigits[i]) ? "yes" : "no";
+        }
+        Engine.gameEngine(qa, getRules());
     }
 
     public static boolean isPrime(int num) {

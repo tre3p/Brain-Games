@@ -6,22 +6,22 @@ import hexlet.code.Utils;
 public class Even {
     private static final int QUESTIONS_QUANTITY = 3;
     private static final int ANSWERS_QUANTITY = 2;
+    private static final int MAX_RANGE_TO_GENERATE_DIGITS = 100;
+    private static final int QUANTITY_OF_RANDOM_DIGITS = 3;
 
-    public static String printRules() {
+    public static String getRules() {
         return "Answer 'yes' if number even otherwise answer 'no'.";
     }
 
-    public static void generateQuestionAndAnswer() {
+    public static void launchEvenGame() {
         String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
-        int[] firstPartOfDigits = Utils.generateDigits();
-        int[] secondPartOfDigits = Utils.generateDigits();
-        qa[0][0] = String.valueOf(secondPartOfDigits[0]);
-        qa[1][0] = String.valueOf(secondPartOfDigits[1]);
-        qa[2][0] = String.valueOf(firstPartOfDigits[0]);
-        qa[0][1] = isEven(secondPartOfDigits[0]) ? "yes" : "no";
-        qa[1][1] = isEven(secondPartOfDigits[1]) ? "yes" : "no";
-        qa[2][1] = isEven(firstPartOfDigits[0]) ? "yes" : "no";
-        Engine.gameEngine(qa, printRules());
+        int[] randomiseDigits = Utils.generateDigits(1, MAX_RANGE_TO_GENERATE_DIGITS,
+                                                    QUANTITY_OF_RANDOM_DIGITS);
+        for (int i = 0; i != randomiseDigits.length; i++) {
+            qa[i][0] = String.valueOf(randomiseDigits[i]);
+            qa[i][1] = isEven(randomiseDigits[i]) ? "yes" : "no";
+        }
+        Engine.gameEngine(qa, getRules());
     }
 
     public static boolean isEven(int firstDigit) {
