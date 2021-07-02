@@ -45,15 +45,13 @@ public class Engine {
 
     public static void gameEngine(String[][] qa, String rules) {
         greeting();
-        int i = 0;
         if (winningsCounter == 0) {
             System.out.println(rules);
         }
         for (int j = 0; j != QUESTIONS_QUANTITY; j++) {
-            System.out.printf("Question: %s\n", qa[i][0]);
+            System.out.printf("Question: %s\n", qa[j][0]);
             String userResult = Engine.getAnswer();
             if (userResult.equals(qa[j][1])) {
-                i++;
                 Engine.correctAnswer();
                 winningsCounter++;
                 Engine.checkIfWin();
