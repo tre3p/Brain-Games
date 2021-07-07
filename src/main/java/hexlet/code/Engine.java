@@ -4,12 +4,11 @@ import java.util.Scanner;
 
 public class Engine {
     private static int winningsCounter;
-    private static final int WINS_TO_VICTORY = 3;
     private static String name;
     private static final int QUESTIONS_QUANTITY = 3;
 
     public static void checkIfWin() {
-        if (winningsCounter == WINS_TO_VICTORY) {
+        if (winningsCounter == QUESTIONS_QUANTITY) {
             System.out.printf("Congratulations, %s!", getName());
         }
     }
