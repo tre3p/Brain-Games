@@ -7,7 +7,7 @@ public class Gcd {
     private static final int QUESTIONS_QUANTITY = 3;
     private static final int ANSWERS_QUANTITY = 2;
     private static final int MAX_RANGE_TO_GENERATE_DIGITS = 100;
-    private static final int QUANTITY_OF_RANDOM_DIGITS = 6;
+    private static final int MIN_RANGE_TO_GENERATE_DIGITS = 1;
 
     public static String getRules() {
         return "Find the greatest common divisor of given numbers.";
@@ -16,8 +16,10 @@ public class Gcd {
     public static void launchGcdGame() {
         int counter = 0;
         String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
-        int[] randomDigits = Utils.generateDigits(1, MAX_RANGE_TO_GENERATE_DIGITS, QUANTITY_OF_RANDOM_DIGITS);
-        for (int i = 0; i != QUANTITY_OF_RANDOM_DIGITS / 2; i++) {
+        int[] randomDigits = Utils.generateDigits(MIN_RANGE_TO_GENERATE_DIGITS,
+                MAX_RANGE_TO_GENERATE_DIGITS,
+                QUESTIONS_QUANTITY * 2);
+        for (int i = 0; i != QUESTIONS_QUANTITY; i++) {
             qa[i][0] = String.format("%d %d", randomDigits[counter], randomDigits[counter + 1]);
             qa[i][1] = String.valueOf(findGcd(randomDigits[counter], randomDigits[counter + 1]));
             counter = counter + 2;

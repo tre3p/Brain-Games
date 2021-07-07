@@ -15,15 +15,19 @@ public class Progression {
 
     public static void launchProgressionGame() {
         String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
+        int counter = 0;
         int firstComplexityOfProgression = MIN_STEP + (int) (Math.random() * COMPLEXITY);
         int secondcomplexityOfProgression = MIN_STEP + (int) (Math.random() * COMPLEXITY);
         int thirdComplexityOfProgression = MIN_STEP + (int) (Math.random() * COMPLEXITY);
         int differenceOfProgression = (int) (Math.random() * MIN_STEP + (int) (Math.random() * COMPLEXITY));
-        String[] firstProgressionAndAnswer = printProgression(firstComplexityOfProgression, differenceOfProgression,
-                                            LENGTH_OF_PROGRESSION);
-        String[] secondProgressionAndAnswer = printProgression(secondcomplexityOfProgression, differenceOfProgression,
+        String[] firstProgressionAndAnswer = printProgression(firstComplexityOfProgression,
+                differenceOfProgression,
                 LENGTH_OF_PROGRESSION);
-        String[] thirdProgressionAndAnswer = printProgression(thirdComplexityOfProgression, differenceOfProgression,
+        String[] secondProgressionAndAnswer = printProgression(secondcomplexityOfProgression,
+                differenceOfProgression,
+                LENGTH_OF_PROGRESSION);
+        String[] thirdProgressionAndAnswer = printProgression(thirdComplexityOfProgression,
+                differenceOfProgression,
                 LENGTH_OF_PROGRESSION);
         qa[0][0] = firstProgressionAndAnswer[0];
         qa[1][0] = secondProgressionAndAnswer[0];

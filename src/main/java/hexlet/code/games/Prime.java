@@ -7,7 +7,7 @@ public class Prime {
     private static final int QUESTIONS_QUANTITY = 3;
     private static final int ANSWERS_QUANTITY = 2;
     private static final int MAX_RANGE_TO_GENERATE_DIGITS = 100;
-    private static final int QUANTITY_OF_RANDOM_DIGITS = 3;
+    private static final int MIN_RANGE_TO_GENERATE_DIGITS = 1;
 
     public static String getRules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -15,8 +15,10 @@ public class Prime {
 
     public static void launchPrimeGame() {
         String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
-        int[] randomDigits = Utils.generateDigits(1, MAX_RANGE_TO_GENERATE_DIGITS, QUANTITY_OF_RANDOM_DIGITS);
-        for (int i = 0; i != randomDigits.length; i++) {
+        int[] randomDigits = Utils.generateDigits(MIN_RANGE_TO_GENERATE_DIGITS,
+                MAX_RANGE_TO_GENERATE_DIGITS,
+                QUESTIONS_QUANTITY);
+        for (int i = 0; i != QUESTIONS_QUANTITY; i++) {
             qa[i][0] = String.valueOf(randomDigits[i]);
             qa[i][1] = isPrime(randomDigits[i]) ? "yes" : "no";
         }
