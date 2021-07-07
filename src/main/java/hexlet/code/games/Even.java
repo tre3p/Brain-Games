@@ -18,7 +18,7 @@ public class Even {
         int[] randomiseDigits = Utils.generateDigits(MIN_RANGE_TO_GENERATE_DIGITS,
                 MAX_RANGE_TO_GENERATE_DIGITS,
                 QUESTIONS_QUANTITY);
-        for (int i = 0; i != randomiseDigits.length; i++) {
+        for (int i = 0; i != QUESTIONS_QUANTITY; i++) {
             qa[i][0] = String.valueOf(randomiseDigits[i]);
             qa[i][1] = isEven(randomiseDigits[i]) ? "yes" : "no";
         }
