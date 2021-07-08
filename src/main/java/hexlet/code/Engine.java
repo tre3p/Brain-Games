@@ -41,20 +41,20 @@ public class Engine {
         return userResult;
     }
 
-    public static void gameEngine(String[][] qa, String rules) {
+    public static void gameEngine(String[][] qaArray, String rules) {
         greeting();
         if (winningsCounter == 0) {
             System.out.println(rules);
         }
         for (int j = 0; j != QUESTIONS_QUANTITY; j++) {
-            System.out.printf("Question: %s\n", qa[j][0]);
+            System.out.printf("Question: %s\n", qaArray[j][0]);
             String userResult = Engine.getAnswer();
-            if (userResult.equals(qa[j][1])) {
+            if (userResult.equals(qaArray[j][1])) {
                 Engine.correctAnswer();
                 winningsCounter++;
                 Engine.checkIfWin();
             } else {
-                String correctResult = qa[j][1];
+                String correctResult = qaArray[j][1];
                 Engine.incorrectAnswer(userResult, correctResult);
                 break;
             }

@@ -15,16 +15,16 @@ public class Gcd {
 
     public static void launchGcdGame() {
         int counter = 0;
-        String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
+        String[][] qaArray = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
         int[] randomDigits = Utils.generateDigits(MIN_RANGE_TO_GENERATE_DIGITS,
                 MAX_RANGE_TO_GENERATE_DIGITS,
                 QUESTIONS_QUANTITY * 2);
         for (int i = 0; i != QUESTIONS_QUANTITY; i++) {
-            qa[i][0] = String.format("%d %d", randomDigits[counter], randomDigits[counter + 1]);
-            qa[i][1] = String.valueOf(findGcd(randomDigits[counter], randomDigits[counter + 1]));
+            qaArray[i][0] = String.format("%d %d", randomDigits[counter], randomDigits[counter + 1]);
+            qaArray[i][1] = String.valueOf(findGcd(randomDigits[counter], randomDigits[counter + 1]));
             counter = counter + 2;
         }
-        Engine.gameEngine(qa, getRules());
+        Engine.gameEngine(qaArray, getRules());
     }
 
     public static int findGcd(int a, int b) {

@@ -14,19 +14,18 @@ public class Progression {
     }
 
     public static void launchProgressionGame() {
-        String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
-        String[] progressionQA;
+        String[][] qaArray = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
         for (int i = 0; i != QUESTIONS_QUANTITY; i++) {
-                progressionQA = printProgression((MIN_STEP + (int) (Math.random() * COMPLEXITY)),
-                        (int) (Math.random() * MIN_STEP + (int) (Math.random() * COMPLEXITY)),
-                        LENGTH_OF_PROGRESSION);
-                qa[i][0] = progressionQA[0];
-                qa[i][1] = progressionQA[1];
+            String[] progressionQA = generateQA((MIN_STEP + (int) (Math.random() * COMPLEXITY)),
+                    (int) (Math.random() * MIN_STEP + (int) (Math.random() * COMPLEXITY)),
+                    LENGTH_OF_PROGRESSION);
+                qaArray[i][0] = progressionQA[0];
+                qaArray[i][1] = progressionQA[1];
         }
-        Engine.gameEngine(qa, getRules());
+        Engine.gameEngine(qaArray, getRules());
     }
 
-    public static String[] printProgression(int complexity, int difference, int length) {
+    public static String[] generateQA(int complexity, int difference, int length) {
         String[] progressionAndAnswer = new String[2];
         String correctResult;
         StringBuilder sb = new StringBuilder();
@@ -39,8 +38,8 @@ public class Progression {
             progression[i] = result.valueOf(temp);
         }
 
-        int findIndexToDots = length - 1;
-        int dotsIndex = (int) (Math.random() * findIndexToDots);
+        int indexToDots = length - 1;
+        int dotsIndex = (int) (Math.random() * indexToDots);
         correctResult = progression[dotsIndex];
         progression[dotsIndex] = "..";
 

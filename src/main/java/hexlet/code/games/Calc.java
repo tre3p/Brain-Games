@@ -16,7 +16,7 @@ public class Calc {
     }
 
     public static void launchCalcGame() {
-        String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
+        String[][] qaArray = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
         int[] firstPartOfRandomise = Utils.generateDigits(MIN_RANGE_FOR_SIMPLE_OPERATIONS,
                 MAX_RANGE_FOR_SIMPLE_OPERATIONS,
                 2);
@@ -27,12 +27,12 @@ public class Calc {
                 MAX_RANGE_FOR_HARD_OPERATIONS,
                 2);
 
-        qa[0][0] = String.format("%d + %d", firstPartOfRandomise[0], firstPartOfRandomise[1]);
-        qa[1][0] = String.format("%d - %d", secondPartOfRandomise[0], secondPartOfRandomise[1]);
-        qa[2][0] = String.format("%d * %d", thirdPartOfRandomise[0], thirdPartOfRandomise[1]);
-        qa[0][1] = String.valueOf(firstPartOfRandomise[0] + firstPartOfRandomise[1]);
-        qa[1][1] = String.valueOf(secondPartOfRandomise[0] - secondPartOfRandomise[1]);
-        qa[2][1] = String.valueOf(thirdPartOfRandomise[0] * thirdPartOfRandomise[1]);
-        Engine.gameEngine(qa, getRules());
+        qaArray[0][0] = String.format("%d + %d", firstPartOfRandomise[0], firstPartOfRandomise[1]);
+        qaArray[1][0] = String.format("%d - %d", secondPartOfRandomise[0], secondPartOfRandomise[1]);
+        qaArray[2][0] = String.format("%d * %d", thirdPartOfRandomise[0], thirdPartOfRandomise[1]);
+        qaArray[0][1] = String.valueOf(firstPartOfRandomise[0] + firstPartOfRandomise[1]);
+        qaArray[1][1] = String.valueOf(secondPartOfRandomise[0] - secondPartOfRandomise[1]);
+        qaArray[2][1] = String.valueOf(thirdPartOfRandomise[0] * thirdPartOfRandomise[1]);
+        Engine.gameEngine(qaArray, getRules());
     }
 }

@@ -14,15 +14,15 @@ public class Even {
     }
 
     public static void launchEvenGame() {
-        String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
+        String[][] qaArray = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
         int[] randomiseDigits = Utils.generateDigits(MIN_RANGE_TO_GENERATE_DIGITS,
                 MAX_RANGE_TO_GENERATE_DIGITS,
                 QUESTIONS_QUANTITY);
         for (int i = 0; i != QUESTIONS_QUANTITY; i++) {
-            qa[i][0] = String.valueOf(randomiseDigits[i]);
-            qa[i][1] = isEven(randomiseDigits[i]) ? "yes" : "no";
+            qaArray[i][0] = String.valueOf(randomiseDigits[i]);
+            qaArray[i][1] = isEven(randomiseDigits[i]) ? "yes" : "no";
         }
-        Engine.gameEngine(qa, getRules());
+        Engine.gameEngine(qaArray, getRules());
     }
 
     public static boolean isEven(int firstDigit) {

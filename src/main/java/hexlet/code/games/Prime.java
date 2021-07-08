@@ -14,15 +14,15 @@ public class Prime {
     }
 
     public static void launchPrimeGame() {
-        String[][] qa = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
+        String[][] qaArray = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
         int[] randomDigits = Utils.generateDigits(MIN_RANGE_TO_GENERATE_DIGITS,
                 MAX_RANGE_TO_GENERATE_DIGITS,
                 QUESTIONS_QUANTITY);
         for (int i = 0; i != QUESTIONS_QUANTITY; i++) {
-            qa[i][0] = String.valueOf(randomDigits[i]);
-            qa[i][1] = isPrime(randomDigits[i]) ? "yes" : "no";
+            qaArray[i][0] = String.valueOf(randomDigits[i]);
+            qaArray[i][1] = isPrime(randomDigits[i]) ? "yes" : "no";
         }
-        Engine.gameEngine(qa, getRules());
+        Engine.gameEngine(qaArray, getRules());
     }
 
     public static boolean isPrime(int num) {
