@@ -10,6 +10,7 @@ public class Calc {
     private static final int MAX_RANGE_FOR_SIMPLE_OPERATIONS = 20;
     private static final int MIN_RANGE_FOR_HARD_OPERATIONS = 10;
     private static final int MAX_RANGE_FOR_HARD_OPERATIONS = 30;
+    private static final int DIGITS_QUANTITY = 2;
 
     public static String getRules() {
         return "What is the result of the expression?";
@@ -19,13 +20,13 @@ public class Calc {
         String[][] qaArray = new String[QUESTIONS_QUANTITY][ANSWERS_QUANTITY];
         int[] firstPartOfRandomise = Utils.generateDigits(MIN_RANGE_FOR_SIMPLE_OPERATIONS,
                 MAX_RANGE_FOR_SIMPLE_OPERATIONS,
-                2);
+                DIGITS_QUANTITY);
         int[] secondPartOfRandomise = Utils.generateDigits(MIN_RANGE_FOR_SIMPLE_OPERATIONS,
                 MAX_RANGE_FOR_SIMPLE_OPERATIONS,
-                2);
+                DIGITS_QUANTITY);
         int[] thirdPartOfRandomise = Utils.generateDigits(MIN_RANGE_FOR_HARD_OPERATIONS,
                 MAX_RANGE_FOR_HARD_OPERATIONS,
-                2);
+                DIGITS_QUANTITY);
 
         qaArray[0][0] = String.format("%d + %d", firstPartOfRandomise[0], firstPartOfRandomise[1]);
         qaArray[1][0] = String.format("%d - %d", secondPartOfRandomise[0], secondPartOfRandomise[1]);

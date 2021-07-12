@@ -17,24 +17,24 @@ public class App {
         System.out.println("1 - Greet\n" + "2 - Even\n" + "3 - Calc\n" + "4 - GCD\n" + "5 - Progression\n"
                            + "6 - Prime\n" + "0 - Exit\n" + "Please enter the game number and press Enter.");
         Scanner chooseGame = new Scanner(System.in);
-        int result = chooseGame.nextInt();
+        String result = chooseGame.nextLine();
         switch (result) {
-            case 1:
+            case "1":
                 Engine.greeting();
                 break;
-            case FIRST_GAME:
+            case "2":
                 Even.launchEvenGame();
                 break;
-            case SECOND_GAME:
+            case "3":
                 Calc.launchCalcGame();
                 break;
-            case THIRD_GAME:
+            case "4":
                 Gcd.launchGcdGame();
                 break;
-            case FOURTH_GAME:
+            case "5":
                 Progression.launchProgressionGame();
                 break;
-            case SIXTH_GAME:
+            case "6":
                 Prime.launchPrimeGame();
                 break;
             default:
