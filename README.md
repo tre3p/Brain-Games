@@ -2,11 +2,10 @@
 [![Actions Status](https://github.com/k0damaDEV/java-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/k0damaDEV/java-project-lvl1/actions)
 <a href="https://codeclimate.com/github/k0damaDEV/java-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/b849edcd1687bf83785f/maintainability" /></a>
 ![example workflow](https://github.com/k0damaDEV/java-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)
-[EVEN GAME]
 <b>Description:</b>
 Simple logic game written on Java
 
-
+[EVEN GAME]
 Example of winning the Even game:
 
 <a href="https://asciinema.org/a/9qxj3BtVIApeZOoAJV7vx23zs" target="_blank"><img src="https://asciinema.org/a/9qxj3BtVIApeZOoAJV7vx23zs.svg" /></a>
