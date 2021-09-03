@@ -3,6 +3,9 @@
 <a href="https://codeclimate.com/github/k0damaDEV/java-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/b849edcd1687bf83785f/maintainability" /></a>
 ![example workflow](https://github.com/k0damaDEV/java-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)
 [EVEN GAME]
+<b>Description:</b>
+Simple logic game written on Java
+
 
 Example of winning the Even game:
 
